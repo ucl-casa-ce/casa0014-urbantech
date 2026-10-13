@@ -11,6 +11,7 @@ let currentView = 'split'; // 'split', 'map', 'grid'
 let mapInstance = null;
 let markersLayer = null;
 const sensorMarkers = new Map();
+let isInitialMapLoad = true;
 
 // Category Colors & SVG Icons
 const CATEGORY_META = {
@@ -54,11 +55,11 @@ function initMap() {
   const mapElement = document.getElementById('map-container');
   if (!mapElement) return;
 
-  // Center on London (slightly east to frame both Marylebone and Olympic Park)
+  // Center on Queen Elizabeth Olympic Park, East London
   mapInstance = L.map('map-container', {
     zoomControl: false,
     attributionControl: true
-  }).setView([51.535, -0.08], 14);
+  }).setView([51.5435, -0.015], 15);
 
   // OpenStreetMap Standard Tiles (free, no API key watermark)
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -174,10 +175,10 @@ function renderMapMarkers() {
   });
 
   // Fit bounds if markers exist
-  if (latLngs.length > 0 && mapInstance) {
-    const bounds = L.latLngBounds(latLngs);
-    mapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 14 });
-  }
+  //  if (latLngs.length > 0 && mapInstance) {
+  //    const bounds = L.latLngBounds(latLngs);
+  //    mapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 14 });
+  //}
 }
 
 /**

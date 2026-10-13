@@ -4,8 +4,7 @@
     "title": "Air Quality and Pollution Monitoring Station",
     "category": "Air Quality",
     "categorySlug": "air-quality",
-    "image": "assets/images/slide-marylebone.png",
-    "imageCrop": "street-photo",
+    "image": "assets/images/marylebone-station.png",
     "description": "This air quality monitoring station is one of a hundred monitors forming part of the UK Automatic Urban and Rural Network (AURN) and London Air Quality Network (LAQN). It measures real-time roadside concentrations of key pollutants in one of central London's busiest traffic corridors.",
     "parameters": [
       "Carbon Dioxide (CO2)",
@@ -38,137 +37,595 @@
     }
   },
   {
-    "id": "qeop-wifi-people-counter",
-    "title": "WiFi Spark Access Points & People Counting",
+    "id": "xinyuan-sun-traffic-monitor",
+    "title": "Vehicle Traffic Flow Monitoring Station",
     "category": "Mobility & People",
     "categorySlug": "mobility",
-    "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80",
-    "description": "Network of approximately 30 public WiFi Access Points deployed across Queen Elizabeth Olympic Park. Run for the London Legacy Development Corporation (LLDC) to provide public connectivity while conducting non-intrusive footfall and pedestrian movement density estimation.",
+    "image": "assets/images/xinyuan-sun-traffic-monitor.jpg",
+    "description": "This roadside traffic sensor is deployed on Middlesex Way in Queen Elizabeth Olympic Park to measure vehicle passage volumes and transit rates across specific road sections, supporting municipal traffic flow analytics and neighborhood street management.",
     "parameters": [
-      "Public WiFi Connectivity",
-      "Probe Request Footfall Estimation",
-      "MAC Address Anonymisation",
-      "Pedestrian Dwell Time"
+      "Vehicle Passage Count",
+      "Traffic Flow Rate",
+      "Speed Estimation",
+      "Peak Hour Volume Analysis"
     ],
     "questions": [
-      "How is citizen privacy and MAC address randomization handled in public space counting?",
-      "How accurate is WiFi probe sensing compared to optical or thermal pedestrian sensors?",
-      "How does the LLDC use park footfall data in long-term legacy masterplanning?"
+      "How many vehicles pass through this section of Middlesex Way during peak commuting hours?",
+      "How often do roadside traffic sensors require calibration and environmental maintenance?"
     ],
     "location": {
-      "address": "Bridge near Bat & Ball / Aquatics Centre, Queen Elizabeth Olympic Park, London E20 2AQ",
-      "lat": 51.53856,
-      "lng": -0.01639,
-      "googleMapsUrl": "https://maps.google.com/?q=51.53856,-0.01639",
-      "what3words": "///orbit.zones.timing",
-      "area": "Stratford, Queen Elizabeth Olympic Park"
+      "address": "Middlesex Wy., London E20 3AZ",
+      "lat": 51.544418,
+      "lng": -0.017674,
+      "googleMapsUrl": "https://maps.app.goo.gl/hh5GoTQhvDLBzFzV6",
+      "what3words": "///brands.live.calculating",
+      "area": "Queen Elizabeth Olympic Park, Stratford"
     },
     "contributor": {
-      "name": "CASA Walkshop Archive",
-      "affiliation": "UCL CASA Connected Environments",
-      "date": "Oct 2021",
-      "cohort": "2021/22"
+      "name": "Xinyuan Sun",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
     }
   },
   {
-    "id": "copper-box-energy-solar",
-    "title": "Copper Box Arena Energy & Solar PV Array",
+    "id": "junrong-wang-surveillance-environmental",
+    "title": "Solar-Powered Smart Pole & Environmental Station",
     "category": "Energy & Utilities",
     "categorySlug": "energy",
-    "image": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-    "description": "Commercial-scale smart metering, building management integration, and rooftop photovoltaic array installed at the Copper Box Arena. Deployed as part of the Smart Sustainable Districts (SSD) programme to monitor building decarbonisation and localized renewable generation.",
+    "image": "assets/images/junrong-wang-surveillance-environmental.jpg",
+    "description": "An integrated solar-powered smart lamppost station near the Lee Valley VeloPark on Abercrombie Road. It combines an autonomous top-mounted photovoltaic solar panel, energy-efficient LED street luminaire, PTZ dome surveillance camera, and environmental telemetry modules.",
     "parameters": [
-      "Three-phase Power Draw (kW)",
-      "Solar PV Generation Yield (kWh)",
-      "HVAC Sub-metering",
-      "Building Management System (BMS) Telemetry"
+      "Solar Photovoltaic Generation",
+      "Adaptive LED Street Lighting",
+      "PTZ Security Surveillance",
+      "Crowd & Pedestrian Density",
+      "Ambient Environmental Sensing"
     ],
     "questions": [
-      "How does peak solar generation align with arena event scheduling and grid demand?",
-      "What telemetry is publicly visible versus restricted to facility operators?",
-      "What role do legacy Olympic venues play in district-scale microgrid strategies?"
+      "What was the ambient air quality and weather condition like when visiting?",
+      "How does local solar irradiance impact the operational autonomy of smart streetlights?",
+      "How many visitors pass through this pedestrian corridor near the Velodrome?"
     ],
     "location": {
-      "address": "Copper Box Arena, Queen Elizabeth Olympic Park, London E20 3HB",
-      "lat": 51.54442,
-      "lng": -0.01986,
-      "googleMapsUrl": "https://maps.google.com/?q=51.54442,-0.01986",
-      "what3words": "///baking.flame.spoil",
-      "area": "Hackney Wick / Stratford"
+      "address": "Queen Elizabeth Olympic Park, Abercrombie Rd, London E20 3AB",
+      "lat": 51.549301,
+      "lng": -0.016114,
+      "googleMapsUrl": "https://maps.app.goo.gl/NccuP4hSrwMxKGhQ6",
+      "what3words": "///gladiators.senior.ropes",
+      "area": "Lee Valley VeloPark, Olympic Park"
     },
     "contributor": {
-      "name": "CASA Walkshop Archive",
-      "affiliation": "UCL CASA Connected Environments",
-      "date": "Oct 2021",
-      "cohort": "2021/22"
+      "name": "Junrong Wang",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
     }
   },
   {
-    "id": "timber-lodge-weather-station",
-    "title": "Timber Lodge Davis Weather Station",
-    "category": "Weather & Climate",
-    "categorySlug": "weather",
-    "image": "https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1200&q=80",
-    "description": "A Davis Vantage Pro2 automated weather station coupled with an Intel Edison telemetry gateway mounted on the roof of Timber Lodge in the north of the park. Measures microclimatic park conditions for habitat monitoring and maintenance scheduling.",
+    "id": "xintong-shao-traffic-monitor",
+    "title": "Smart City Road Traffic Monitoring Station",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/xintong-shao-traffic-monitor.png",
+    "description": "This traffic monitoring station is part of a municipal smart city network deployed along Gildredge Road in Eastbourne. Using cameras and optical sensors, it gathers real-time intelligence on vehicle movement patterns, speed distributions, and street congestion to assist transport authorities.",
     "parameters": [
-      "Barometric Pressure (hPa)",
-      "Ambient Temperature (°C)",
-      "Relative Humidity (%)",
-      "Wind Speed & Direction",
-      "Rainfall Rate (mm/hr)",
-      "Solar & UV Radiation"
+      "Vehicle Movement Tracking",
+      "Traffic Flow Velocity",
+      "Congestion Pattern Recognition",
+      "Road Usage Statistics"
     ],
     "questions": [
-      "How do park microclimates differ from the wider urban heat island of East London?",
-      "What maintenance routines (e.g. debris cleaning, sensor recalibration) are needed for outdoor weather stations?",
-      "How could open park weather data be integrated into automated park irrigation systems?"
+      "What specific telemetry data do municipal traffic sensors collect about passing vehicles?",
+      "How can urban planners utilize real-time speed and flow data to alleviate town centre congestion?",
+      "Who is the primary beneficiary of this urban data infrastructure?"
     ],
     "location": {
-      "address": "Timber Lodge Cafe, 1A Honour Lea Ave, Queen Elizabeth Olympic Park, London E20 1DY",
-      "lat": 51.55171,
-      "lng": -0.01602,
-      "googleMapsUrl": "https://maps.google.com/?q=51.55171,-0.01602",
-      "what3words": "///wants.levels.sofa",
-      "area": "North Park, Queen Elizabeth Olympic Park"
+      "address": "3a Gildredge Rd, Eastbourne, BN21 4RD",
+      "lat": 50.7686,
+      "lng": 0.2847,
+      "googleMapsUrl": "https://maps.app.goo.gl/vpfRCFcet6P5BMe58",
+      "what3words": "///agreed.scans.guilty",
+      "area": "Eastbourne Town Centre"
     },
     "contributor": {
-      "name": "CASA Walkshop Archive",
-      "affiliation": "UCL CASA Connected Environments",
-      "date": "Oct 2021",
-      "cohort": "2021/22"
+      "name": "Xintong Shao",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
     }
   },
   {
-    "id": "ucl-east-marshgate-environmental",
-    "title": "UCL East Marshgate Environmental Sensor Network",
+    "id": "freya-huang-air-quality",
+    "title": "Streetlight-Mounted Air Quality & Pollution Monitor",
     "category": "Air Quality",
     "categorySlug": "air-quality",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    "description": "Connected Environments Living Lab nodes deployed around UCL East Marshgate and Pool Street. Measures indoor and perimeter air metrics, particulate matter, and acoustic levels transmitted via campus LoRaWAN and MQTT brokers to CASA data platforms.",
+    "image": "assets/images/freya-huang-air-quality.jpg",
+    "description": "A compact IoT environmental monitor mounted directly on a streetlight pole within Queen Elizabeth Olympic Park. The sensor enclosure samples ambient roadside air to capture microclimate metrics and track particulate matter and harmful gases.",
     "parameters": [
-      "Particulate Matter (PM1.0, PM2.5, PM10)",
-      "Volatile Organic Compounds (VOCs)",
-      "Acoustic SPL (dBA)",
-      "Temperature & Humidity"
+      "Particulate Matter (PM2.5 / PM10)",
+      "Carbon Dioxide (CO2)",
+      "Ambient Air Temperature",
+      "Relative Humidity"
     ],
     "questions": [
-      "How does campus building geometry affect local air dispersion and pollutant pooling?",
-      "How can university research sensor networks be bridged to public smart city initiatives?",
-      "What communication protocols (LoRaWAN vs WiFi vs Cellular) best suit continuous campus sensing?"
+      "What specific pollutant thresholds trigger public health alerts on municipal dashboards?",
+      "How can hyper-local pole-mounted sensors improve neighbourhood air quality mapping?",
+      "Could real-time roadside pollution readings be displayed directly to pedestrians and park visitors?"
     ],
     "location": {
-      "address": "UCL East Marshgate, 7 Sidings St, London E20 2AE",
-      "lat": 51.53696,
-      "lng": -0.01258,
-      "googleMapsUrl": "https://maps.google.com/?q=51.53696,-0.01258",
-      "what3words": "///modern.wires.digit",
-      "area": "UCL East, Queen Elizabeth Olympic Park"
+      "address": "Queen Elizabeth Olympic Park, London E20",
+      "lat": 51.539992,
+      "lng": -0.013175,
+      "googleMapsUrl": "https://maps.app.goo.gl/2h115yCCBDXK84vy7",
+      "what3words": "///spoil.drew.cared",
+      "area": "Queen Elizabeth Olympic Park"
     },
     "contributor": {
-      "name": "Connected Environments Lab",
+      "name": "Freya Yifei Huang",
       "affiliation": "UCL CASA",
-      "date": "Sep 2023",
-      "cohort": "2023/24"
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "lizi-wang-smart-elevator",
+    "title": "Smart Building Escalator Presence & Energy Sensor",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "assets/images/lizi-wang-smart-elevator.jpg",
+    "description": "A smart transit and building energy-management installation at UCL East Marshgate. Infrared motion sensors and presence detectors identify approaching passengers, automatically transitioning the escalators and elevator systems from low-power standby mode to active operation to optimize energy efficiency.",
+    "parameters": [
+      "Infrared Passenger Motion Detection",
+      "Automatic Standby Energy Saving",
+      "Presence & Entry Detection",
+      "Building Energy Telemetry"
+    ],
+    "questions": [
+      "What observable indicators signal when the escalator transitions into low-power standby mode?",
+      "How does sensor-actuated standby mode compare in kilowatt-hour savings with continuously running lifts?",
+      "Who benefits most from intelligent building sensors — facility managers, students, or sustainability planners?"
+    ],
+    "location": {
+      "address": "7 Siding Street, Marshgate, London, E20 2AE",
+      "lat": 51.53754,
+      "lng": -0.0118,
+      "googleMapsUrl": "https://ucl.ac.uk/ucl-east",
+      "what3words": "///rates.claims.wiped",
+      "area": "UCL East Marshgate, Stratford"
+    },
+    "contributor": {
+      "name": "Lizi Wang",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "yussr-osman-motion-sensor",
+    "title": "Intersection Traffic Flow Motion Sensor",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/yussr-osman-motion-sensor.jpg",
+    "description": "Mounted high on a signal mast overlooking Olympic Park Avenue, this directional motion sensor detects vehicular and bicycle movements entering the intersection. The resulting real-time stream informs dynamic signal phase adjustments and cycling infrastructure analysis.",
+    "parameters": [
+      "Directional Vehicle Motion",
+      "Intersection Approach Velocity",
+      "Traffic Signal Phase Actuation",
+      "Bicycle & Cyclist Presence"
+    ],
+    "questions": [
+      "How might this intersection sensor be upgraded to distinguish between motor vehicles and micro-mobility riders?",
+      "What other pedestrian or traffic density features could be monitored through this vantage point?"
+    ],
+    "location": {
+      "address": "Olympic Park Ave, London E20",
+      "lat": 51.5442222,
+      "lng": -0.0123056,
+      "googleMapsUrl": "https://maps.app.goo.gl/mayeqqmqXx3Ddj4y9",
+      "what3words": "///tones.voted.vivid",
+      "area": "Olympic Park Avenue, Stratford"
+    },
+    "contributor": {
+      "name": "Yussr Osman",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "jiahua-he-wireless-gateway",
+    "title": "Street Telemetry Wireless Hub & Sensor Node",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "assets/images/jiahua-he-wireless-gateway.png",
+    "description": "A pole-mounted wireless transceiver and communication aggregation node situated along Westfield Avenue in Stratford. It provides connectivity routing for street cameras and environmental sensors, linking local IoT devices to citywide backhaul networks.",
+    "parameters": [
+      "Wireless Mesh Telemetry Hub",
+      "IoT Gateway Routing",
+      "Environmental Telemetry Ingestion",
+      "Smart Street Connectivity"
+    ],
+    "questions": [
+      "What is the operational function of this field gateway node?",
+      "Why was this specific pole location selected along the Westfield commercial avenue?",
+      "Is the device powered via municipal street lighting mains or internal rechargeable batteries?"
+    ],
+    "location": {
+      "address": "61 Westfield Ave, London E20 1EH",
+      "lat": 51.542283,
+      "lng": -0.008425,
+      "googleMapsUrl": "https://maps.app.goo.gl/ZbMScXawqYkUeG478",
+      "what3words": "///relay.levels.timing",
+      "area": "Westfield Avenue, Stratford"
+    },
+    "contributor": {
+      "name": "Jiahua He",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "gilang-pamungkas-radar-sensor",
+    "title": "Microwave Doppler Radar Traffic Light Sensor",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/gilang-pamungkas-radar-sensor.jpg",
+    "description": "A microwave radar sensor (operating at 24 GHz / 77 GHz) mounted above traffic signals on Waterden Road. Utilizing Doppler frequency shift and radio wave reflections, it continuously measures approaching vehicle presence, distance, and velocity to dynamically trigger green light signals.",
+    "parameters": [
+      "Microwave Radar Presence Detection (24/77 GHz)",
+      "Doppler Velocity & Speed Measurement",
+      "Direction of Travel Vector",
+      "Dynamic Signal Phase Actuation"
+    ],
+    "questions": [
+      "What was the traffic intensity and queue length during peak observation hours?",
+      "How can London open data portals (TfL, London Datastore) expose real-time junction radar telemetry?",
+      "Who benefits most from adaptive radar signals — pedestrians, buses, or private vehicle drivers?"
+    ],
+    "location": {
+      "address": "Waterden Rd, Stratford, London, E20 3AZ",
+      "lat": 51.5444444,
+      "lng": -0.0182222,
+      "googleMapsUrl": "https://maps.app.goo.gl/Aiz33E66DFBVRUmp8",
+      "what3words": "///radar.cloth.intro",
+      "area": "Waterden Road, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "Gilang Pamungkas",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "haoyu-hu-traffic-monitor",
+    "title": "Urban Optical & Doppler Radar Traffic Monitor",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/haoyu-hu-traffic-monitor.jpg",
+    "description": "Perched atop a traffic light mast along Terminus Road in Eastbourne, this dual optical and Doppler radar monitor tracks oncoming vehicle volumes and speed compliance across this key pedestrian and shopping corridor.",
+    "parameters": [
+      "Optical Vehicle Detection",
+      "Doppler Radar Speed Measurement",
+      "Lane Direction Tracking",
+      "Traffic Volume Telemetry"
+    ],
+    "questions": [
+      "What electrical or data connection does the mast wiring route into?",
+      "Why is the monitor oriented at this specific angle relative to oncoming traffic?",
+      "Why did the municipal transport council choose this intersection to install the monitor?"
+    ],
+    "location": {
+      "address": "46 Terminus Rd, Eastbourne BN21 3LX",
+      "lat": 50.7689167,
+      "lng": 0.2814167,
+      "googleMapsUrl": "https://maps.app.goo.gl/iQFns5SUTw1iW3RY7",
+      "what3words": "///spin.trains.voices",
+      "area": "Terminus Road, Eastbourne"
+    },
+    "contributor": {
+      "name": "Haoyu Hu",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "chaoshuo-han-smoke-detector",
+    "title": "Photoelectric Optical Smoke & Fire Detector",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "image": "assets/images/chaoshuo-han-smoke-detector.png",
+    "description": "A ceiling-mounted photoelectric optical smoke detector installed at Rahere Court. It utilizes infrared light scattering to detect airborne combustion particles, triggering emergency visual alerts and acoustic alarms upon exceeding obscuration thresholds.",
+    "parameters": [
+      "Infrared Light Scattering",
+      "Airborne Particle Obscuration",
+      "Audible Siren Alarm (85 dB)",
+      "Battery & Power Diagnostic Beacon"
+    ],
+    "questions": [
+      "How does the optical sensing chamber distinguish between genuine combustion smoke and steam or dust?",
+      "Why is periodic acoustic and sensor testing vital for residential public safety systems?"
+    ],
+    "location": {
+      "address": "Rahere Court, Tollet St, London E1 4DW",
+      "lat": 51.52264,
+      "lng": -0.04358,
+      "googleMapsUrl": "https://maps.app.goo.gl/fmHp1AtANi4JTUQQ7",
+      "what3words": "///plans.spoke.bids",
+      "area": "Mile End, Tower Hamlets"
+    },
+    "contributor": {
+      "name": "Chaoshuo Han",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "xinyi-zhang-smart-streetlight",
+    "title": "Smart Streetlight & PTZ Surveillance Node",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "assets/images/xinyi-zhang-smart-streetlight.jpg",
+    "description": "Installed beside the Tumbling Bay Playground on Olympic Park Avenue, this multi-functional smart streetlight combines automated high-efficiency LED illumination, an integrated 360-degree dome surveillance camera, and environmental control hardware.",
+    "parameters": [
+      "Adaptive LED Street Illumination",
+      "360-Degree Dome CCTV",
+      "Pedestrian Pathway Presence",
+      "Smart Park Telemetry Enclosure"
+    ],
+    "questions": [
+      "What specific sensor array is housed within the dome and rectangular control box?",
+      "How does adaptive park lighting balance energy efficiency with visitor security at night?"
+    ],
+    "location": {
+      "address": "Olympic Park Ave, London, E20 1DY",
+      "lat": 51.5484792,
+      "lng": -0.0157127,
+      "googleMapsUrl": "https://maps.app.goo.gl/9LFm5JbeXq1zwWBq8",
+      "what3words": "///cotton.leaves.timing",
+      "area": "Tumbling Bay, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "Xinyi Zhang",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "madina-diallo-motion-sensor",
+    "title": "Automated Entrance Microwave Motion Sensor",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/madina-diallo-motion-sensor.png",
+    "description": "An overhead microwave radar and active infrared motion detector installed above the main entrance sliding doors at Westfield Stratford City. It detects pedestrian approach to actuate automatic door mechanisms, providing touchless accessibility and thermal climate retention.",
+    "parameters": [
+      "Microwave Radar Pedestrian Detection",
+      "Active Infrared Presence Safeguard",
+      "Automatic Door Actuation",
+      "Bidirectional Flow Detection"
+    ],
+    "questions": [
+      "How do commercial entrance sensors handle potential false activations in heavy footfall environments?",
+      "How is the automatic door system integrated with shopping centre fire safety and emergency evacuation protocols?"
+    ],
+    "location": {
+      "address": "Unit 101, Westfield Stratford City, London E20 1EP",
+      "lat": 51.54348,
+      "lng": -0.00752,
+      "googleMapsUrl": "https://maps.app.goo.gl/KpkbJ7zc7h7Darar9",
+      "what3words": "///limit.shout.breeze",
+      "area": "Westfield Stratford City"
+    },
+    "contributor": {
+      "name": "Madina Diallo",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "qingshan-luo-cycle-counter",
+    "title": "Piezoelectric Cycle Counter & Digital Totem",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/qingshan-luo-cycle-counter.png",
+    "description": "London's smart digital cycle counter totem along the Victoria Embankment Cycle Superhighway (CS3). Subsurface piezoelectric sensors generate electrical charges when bicycles pass over the track, updating an interactive outdoor LED display that showcases real-time daily and annual rider volumes.",
+    "parameters": [
+      "Piezoelectric In-Ground Axle Sensors",
+      "Real-Time Daily Cyclist Count",
+      "Cumulative Annual Rider Totals",
+      "Public LED Information Display"
+    ],
+    "questions": [
+      "What practical applications do municipal planners have for continuous cycling telemetry data?",
+      "Why is presenting cumulative cycling milestones directly on public digital totems effective for active travel encouragement?",
+      "What maintenance protocols exist for subsurface road sensors subjected to continuous urban traffic?"
+    ],
+    "location": {
+      "address": "Victoria Embankment, London WC2N 6PB",
+      "lat": 51.50706,
+      "lng": -0.12236,
+      "googleMapsUrl": "https://maps.app.goo.gl/PcKWJ6cSknWnTwBv8",
+      "what3words": "///firm.water.gains",
+      "area": "Victoria Embankment, Westminster"
+    },
+    "contributor": {
+      "name": "Qingshan Luo",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "yewei-bian-ptz-surveillance",
+    "title": "Public Transit PTZ Optical Surveillance Camera",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/yewei-bian-ptz-surveillance.jpg",
+    "description": "A high-performance Pan-Tilt-Zoom (PTZ) optical CCTV camera installed within the public concourse and transit hub at International Way, Queen Elizabeth Olympic Park. It provides automated 360-degree coverage to monitor passenger transit density and security.",
+    "parameters": [
+      "Pan-Tilt-Zoom Optical Tracking",
+      "Passenger Flow Monitoring",
+      "High-Definition Video Stream",
+      "Transit Concourse Surveillance"
+    ],
+    "questions": [
+      "What specific concourse areas fall within the active field-of-view of this PTZ camera?",
+      "Who has authorized administrative access to live and recorded transit footage?",
+      "How long is video telemetry retained and how are privacy rights safeguarded in public transit spaces?"
+    ],
+    "location": {
+      "address": "International Wy, Queen Elizabeth Olympic Park, London E20 1YY",
+      "lat": 51.5450322,
+      "lng": -0.0086653,
+      "googleMapsUrl": "https://maps.app.goo.gl/z6JYRgSRHhPrTzb38",
+      "what3words": "///shack.points.tins",
+      "area": "Stratford International, Olympic Park"
+    },
+    "contributor": {
+      "name": "Yewei Bian",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "annie-zhu-wifi-spark-gateway",
+    "title": "Public Wi-Fi Access Point or IoT Gateway",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "assets/images/annie-zhu-wifi-spark-gateway.png",
+    "description": "A street communications pole on Waterden Road equipped with interconnected weatherproof enclosures bearing the WiFi SPARK insignia. The system provides open public Wi-Fi coverage across Olympic Park and functions as an IoT edge gateway backhauling camera and sensor data to cloud services.",
+    "parameters": [
+      "Public Wi-Fi Connectivity (802.11)",
+      "IoT Sensor Telemetry Gateway",
+      "Cloud Network Backhaul",
+      "Weatherproof Outdoor Enclosure"
+    ],
+    "questions": [
+      "What is the function of the upper enclosure — power supply?",
+      "Is this installation primarily an open public hotspot or an encrypted municipal telemetry router?",
+      "Does the industrial power socket have any relationship with the IoT device?"
+    ],
+    "location": {
+      "address": "Waterden Rd, London, E20 1DR",
+      "lat": 51.5442516,
+      "lng": -0.0147843,
+      "googleMapsUrl": "https://maps.app.goo.gl/PviKY2cRv9ATZUZK9",
+      "what3words": "///prop.nasal.medium",
+      "area": "Waterden Road, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "Annie Zhu",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "yidan-gao-spark-wifi",
+    "title": "SPARK® Smart Park Wi-Fi Telemetry Node",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "assets/images/yidan-gao-spark-wifi.jpg",
+    "description": "Part of Queen Elizabeth Olympic Park's digital smart infrastructure at One Pool Street. Powered by the WiFi SPARK platform, this pole-mounted outdoor unit supplies high-speed public connectivity and collects anonymized footfall and connectivity metrics across the campus.",
+    "parameters": [
+      "Smart Park Wi-Fi Connectivity",
+      "Anonymized User Session Telemetry",
+      "IP66/67 Rated Outdoor Enclosure",
+      "High-Speed Fibre Backhaul Link"
+    ],
+    "questions": [
+      "What anonymous spatial and footfall telemetry do these SPARK Wi-Fi nodes collect?",
+      "What backhaul infrastructure connects this node into the Queen Elizabeth Olympic Park backbone?",
+      "Who are the key stakeholders for this data — campus visitors, event planners, or municipal managers?"
+    ],
+    "location": {
+      "address": "One Pool Street, London E20 2AF",
+      "lat": 51.537434,
+      "lng": -0.0096,
+      "googleMapsUrl": "https://maps.app.goo.gl/or1ck3rHRSqZwy3F8",
+      "what3words": "///raced.ranged.refuse",
+      "area": "UCL East One Pool Street, Stratford"
+    },
+    "contributor": {
+      "name": "Yidan Gao",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "ziyi-wang-traffic-monitoring",
+    "title": "Smart City Traffic Monitoring & AI Vision Station",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "assets/images/ziyi-wang-traffic-monitoring.jpg",
+    "description": "Located along Celebration Avenue in Stratford, this intelligent roadside station utilizes an AI-enabled camera system to gather vehicle counts, flow rates, average speeds, and vehicle classifications to predict congestion trends and bolster road safety.",
+    "parameters": [
+      "AI Vehicle Classification",
+      "Real-Time Traffic Flow Rate",
+      "Average Speed Tracking",
+      "Congestion Prediction Modeling",
+      "Road Safety Analytics"
+    ],
+    "questions": [
+      "What time of day exhibits the highest traffic density along Celebration Avenue?",
+      "How can everyday motorists access real-time road condition telemetry before setting off?",
+      "Who benefits most from AI traffic intelligence — drivers, city transit planners, or pedestrians?"
+    ],
+    "location": {
+      "address": "Celebration Avenue, Stratford, London, E20",
+      "lat": 51.547156,
+      "lng": -0.014126,
+      "googleMapsUrl": "https://maps.app.goo.gl/JKiWBB5um4mRTZmv9",
+      "what3words": "///remove.tolls.matter",
+      "area": "Celebration Avenue, Stratford"
+    },
+    "contributor": {
+      "name": "Ziyi Wang",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
+    }
+  },
+  {
+    "id": "ethan-taylor-oil-separator-alarm",
+    "title": "Solar-Powered Oil/Water Separator Environmental Alarm",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "image": "assets/images/ethan-taylor-oil-separator-alarm.jpg",
+    "description": "An environmental monitoring unit installed at Eton Manor in Queen Elizabeth Olympic Park. It tracks the integrity of an underground runoff oil/water separator, triggering automated SMS alerts to maintenance teams and flashing a strobe beacon if hazardous contaminants exceed safe thresholds.",
+    "parameters": [
+      "Oil/Water Separation Level Sensor",
+      "Hydrocarbon Contamination Alarm",
+      "Solar Panel & Battery Management",
+      "Automated Cellular SMS Alerting",
+      "Amber Strobe Visual Warning Beacon"
+    ],
+    "questions": [
+      "Why is the enclosure housing so substantial compared to the internal electronics?",
+      "Why was the enclosure designed with a transparent inspection window for field diagnostics?",
+      "Who receives the urgent telemetry alerts, and what physical response protocol is triggered?"
+    ],
+    "location": {
+      "address": "Eton Manor, Queen Elizabeth Olympic Park, Leadmill Ln, London E20 3AD",
+      "lat": 51.5540172,
+      "lng": -0.0158713,
+      "googleMapsUrl": "https://maps.app.goo.gl/pwBTZGeKLEKtQRAd7",
+      "what3words": "///mouse.allows.follow",
+      "area": "Eton Manor, Olympic Park"
+    },
+    "contributor": {
+      "name": "Ethan Taylor",
+      "affiliation": "UCL CASA",
+      "date": "Oct 2025",
+      "cohort": "2025/26"
     }
   }
 ]

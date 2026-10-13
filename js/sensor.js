@@ -3,7 +3,9 @@
  * Sensor Detail Page Logic
  */
 
+let allSensors = [];
 let currentSensor = null;
+let currentIndex = -1;
 let detailMapInstance = null;
 
 const CATEGORY_META = {
@@ -25,10 +27,13 @@ async function loadSensorDetail(sensorId) {
   try {
     const res = await fetch('data/sensors.json');
     if (!res.ok) throw new Error('Failed to fetch dataset');
-    const sensors = await res.json();
-    currentSensor = sensors.find(s => s.id === sensorId) || sensors[0];
+    allSensors = await res.json();
+    currentIndex = allSensors.findIndex(s => s.id === sensorId);
+    if (currentIndex === -1) currentIndex = 0;
+    currentSensor = allSensors[currentIndex];
 
     renderDetailPage(currentSensor);
+    setupSensorNavigation(currentIndex, allSensors);
     initMiniMap(currentSensor.location?.lat, currentSensor.location?.lng, currentSensor);
   } catch (err) {
     console.error('Error loading sensor detail:', err);
@@ -91,7 +96,7 @@ function renderDetailPage(sensor) {
   if (coordsVal && sensor.location?.lat && sensor.location?.lng) {
     const coordString = `${sensor.location.lat.toFixed(6)}, ${sensor.location.lng.toFixed(6)}`;
     coordsVal.innerHTML = `
-      <span>@${coordString}</span>
+      <span>${coordString}</span>
       <button class="copy-btn" id="copy-coords-btn" onclick="copyToClipboard('${coordString}', 'Coordinates copied!')">Copy</button>
     `;
   }
@@ -134,6 +139,66 @@ function renderDetailPage(sensor) {
 }
 
 /**
+ * Setup Next / Previous Observation Navigation
+ */
+function setupSensorNavigation(index, list) {
+  if (!list || list.length === 0) return;
+  const total = list.length;
+  const prevIndex = (index - 1 + total) % total;
+  const nextIndex = (index + 1) % total;
+  const prevSensor = list[prevIndex];
+  const nextSensor = list[nextIndex];
+
+  // Top Nav Counter & Buttons
+  const counterEl = document.getElementById('detail-nav-counter');
+  if (counterEl) {
+    counterEl.textContent = `Observation ${index + 1} of ${total}`;
+  }
+
+  const navPrevBtn = document.getElementById('nav-prev-btn');
+  if (navPrevBtn && prevSensor) {
+    navPrevBtn.href = `sensor.html?id=${prevSensor.id}`;
+    navPrevBtn.title = `Previous: ${prevSensor.title} (← Left Arrow)`;
+  }
+
+  const navNextBtn = document.getElementById('nav-next-btn');
+  if (navNextBtn && nextSensor) {
+    navNextBtn.href = `sensor.html?id=${nextSensor.id}`;
+    navNextBtn.title = `Next: ${nextSensor.title} (→ Right Arrow)`;
+  }
+
+  // Bottom Navigation Cards
+  const bottomPrevBtn = document.getElementById('bottom-prev-btn');
+  const bottomPrevTitle = document.getElementById('bottom-prev-title');
+  if (bottomPrevBtn && prevSensor) {
+    bottomPrevBtn.href = `sensor.html?id=${prevSensor.id}`;
+    if (bottomPrevTitle) bottomPrevTitle.textContent = prevSensor.title;
+  }
+
+  const bottomNextBtn = document.getElementById('bottom-next-btn');
+  const bottomNextTitle = document.getElementById('bottom-next-title');
+  if (bottomNextBtn && nextSensor) {
+    bottomNextBtn.href = `sensor.html?id=${nextSensor.id}`;
+    if (bottomNextTitle) bottomNextTitle.textContent = nextSensor.title;
+  }
+
+  // Keyboard navigation (ArrowLeft = Prev, ArrowRight = Next)
+  window._nextSensorUrl = `sensor.html?id=${nextSensor.id}`;
+  window._prevSensorUrl = `sensor.html?id=${prevSensor.id}`;
+  document.removeEventListener('keydown', handleKeyNavigation);
+  document.addEventListener('keydown', handleKeyNavigation);
+}
+
+function handleKeyNavigation(e) {
+  if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+  if (e.key === 'ArrowRight' && window._nextSensorUrl) {
+    window.location.href = window._nextSensorUrl;
+  } else if (e.key === 'ArrowLeft' && window._prevSensorUrl) {
+    window.location.href = window._prevSensorUrl;
+  }
+}
+
+/**
  * Initialize Mini Leaflet Map for Detail Page
  */
 function initMiniMap(lat, lng, sensor) {
@@ -149,9 +214,8 @@ function initMiniMap(lat, lng, sensor) {
     scrollWheelZoom: false
   }).setView([lat, lng], 16);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19
   }).addTo(detailMapInstance);
 
@@ -197,7 +261,7 @@ function openLightbox(src) {
 /**
  * Clipboard Copy Utility
  */
-window.copyToClipboard = function(text, successMsg) {
+window.copyToClipboard = function (text, successMsg) {
   navigator.clipboard.writeText(text).then(() => {
     showToast(successMsg || 'Copied to clipboard!');
   }).catch(() => {

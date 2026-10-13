@@ -8,7 +8,7 @@
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <!-- Master Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
 
@@ -34,12 +34,26 @@
   <!-- Detail Page Main Container -->
   <main class="detail-container" id="detail-main-content">
     
-    <!-- Breadcrumb & Back Link -->
-    <div>
+    <!-- Breadcrumb, Counter & Next/Prev Controls -->
+    <div class="detail-top-nav">
       <a href="index.html" class="back-nav">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
         Return to London Sensor Map
       </a>
+
+      <div class="sensor-nav-controls">
+        <span class="sensor-nav-counter" id="detail-nav-counter">Loading...</span>
+        <div class="sensor-nav-buttons">
+          <a id="nav-prev-btn" class="nav-control-btn" href="#" title="Previous Observation (Left Arrow)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Prev</span>
+          </a>
+          <a id="nav-next-btn" class="nav-control-btn primary" href="#" title="Next Observation (Right Arrow)">
+            <span>Next</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Header Section -->
@@ -155,6 +169,34 @@
 
     </div>
 
+    <!-- Bottom Observation Navigation Card -->
+    <nav class="detail-bottom-nav">
+      <a id="bottom-prev-btn" class="bottom-nav-card prev" href="#">
+        <div class="bottom-nav-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+        </div>
+        <div class="bottom-nav-text">
+          <span class="bottom-nav-label">Previous Observation</span>
+          <span class="bottom-nav-title" id="bottom-prev-title">Previous Sensor</span>
+        </div>
+      </a>
+
+      <a href="index.html" class="bottom-nav-center-btn" title="View all sensors on the observatory map">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>All Observations (19)</span>
+      </a>
+
+      <a id="bottom-next-btn" class="bottom-nav-card next" href="#">
+        <div class="bottom-nav-text text-right">
+          <span class="bottom-nav-label">Next Observation</span>
+          <span class="bottom-nav-title" id="bottom-next-title">Next Sensor</span>
+        </div>
+        <div class="bottom-nav-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        </div>
+      </a>
+    </nav>
+
   </main>
 
   <!-- Photo Lightbox Modal -->
@@ -171,6 +213,6 @@
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <!-- Detail Controller -->
-  <script src="js/sensor.js"></script>
+  <script src="js/sensor.js?v=5"></script>
 </body>
 </html>

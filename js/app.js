@@ -58,12 +58,11 @@ function initMap() {
   mapInstance = L.map('map-container', {
     zoomControl: false,
     attributionControl: true
-  }).setView([51.535, -0.08], 12);
+  }).setView([51.535, -0.08], 14);
 
-  // Modern minimal dark/light tile layer (CartoDB Positron)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+  // OpenStreetMap Standard Tiles (free, no API key watermark)
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     maxZoom: 19
   }).addTo(mapInstance);
 
@@ -93,7 +92,7 @@ function applyFilters() {
   filteredSensors = allSensors.filter(sensor => {
     // Category match
     const catMatch = (currentCategory === 'all') || (sensor.categorySlug === currentCategory);
-    
+
     // Search match
     if (!currentSearchQuery) return catMatch;
     const query = currentSearchQuery.toLowerCase();
@@ -202,7 +201,7 @@ function renderCards() {
   container.innerHTML = filteredSensors.map(sensor => {
     const meta = CATEGORY_META[sensor.categorySlug] || CATEGORY_META.default;
     return `
-      <article class="sensor-card" id="card-${sensor.id}" onclick="handleCardClick('${sensor.id}', event)">
+      <article class="sensor-card" id="card-${sensor.id}" style="flex-shrink: 0; min-height: 380px;" onclick="handleCardClick('${sensor.id}', event)">
         <div class="card-media">
           <img class="card-img" src="${sensor.image}" alt="${sensor.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'">
           <div class="card-badge">
@@ -242,8 +241,14 @@ function renderCards() {
  * Handle card click: center on map and open popup
  */
 function handleCardClick(sensorId, event) {
+  // If in grid view, navigate directly to sensor page
+  if (currentView === 'grid') {
+    window.location.href = `sensor.html?id=${sensorId}`;
+    return;
+  }
+
   // If user clicked the "Explore" link directly, let default link action proceed
-  if (event.target.closest('.view-link')) return;
+  if (event?.target?.closest?.('.view-link')) return;
 
   const marker = sensorMarkers.get(sensorId);
   if (marker && mapInstance) {
@@ -321,6 +326,7 @@ function setupEventListeners() {
       splitBtn?.classList.add('active');
       mainView.className = 'main-container view-split';
       mapPanel.style.display = 'block';
+      cardsContainer.style.display = '';
       cardsContainer.className = 'cards-stream';
     } else if (view === 'map') {
       mapBtn?.classList.add('active');
@@ -331,7 +337,7 @@ function setupEventListeners() {
       gridBtn?.classList.add('active');
       mainView.className = 'main-container view-grid-only';
       mapPanel.style.display = 'none';
-      cardsContainer.style.display = 'grid';
+      cardsContainer.style.display = '';
       cardsContainer.className = 'cards-grid';
     }
 

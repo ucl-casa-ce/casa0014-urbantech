@@ -3,9 +3,9 @@
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=flat-square&logo=github)](https://ucl-casa-ce.github.io/casa0014-urbantech/)
 [![UCL CASA](https://img.shields.io/badge/UCL-CASA0014-purple?style=flat-square)](https://www.ucl.ac.uk/bartlett/casa/)
 
-An interactive web platform and living spatial archive for [UCL CASA0014](https://github.com/ucl-casa-ce/casa0014) (*Connected Environments*) students to observe, document, analyze, and map physical urban sensors and IoT infrastructure across London.
+An interactive web platform and living spatial archive for [UCL CASA0014](https://github.com/ucl-casa-ce/casa0014) (*Connected Environments*) students to observe, document, analyse, and map physical urban sensors and IoT infrastructure across London.
 
-This platform replaces static PowerPoint slides with an open, searchable spatial observatory featuring interactive maps, rich detail pages, and automated GitHub-driven submission workflows.
+This platform provides a searchable observatory featuring interactive maps, detail pages, and automated GitHub-driven submission workflows.
 
 ---
 
@@ -17,22 +17,21 @@ This platform replaces static PowerPoint slides with an open, searchable spatial
    - Filter by domain, live keyword search across parameters and locations.
    - Switch between **Split Map & Cards**, **Full Map**, and **Gallery Grid** views.
 2. **Dedicated Sensor Dossier Pages (`sensor.html?id=...`)**:
-   - Replicates and enhances the PowerPoint slide layout in a responsive format.
-   - High-resolution field photography with click-to-zoom lightbox.
+   - Field photography with click-to-zoom lightbox.
    - Interactive mini-map centered on the exact installation.
    - "What is being sensed?" context and parameter badges.
-   - Thought-provoking "Questions Raised on Site" discussion prompts.
+   - "Questions Raised on Site" discussion prompts.
    - Location card with 1-click coordinate copying, [what3words](https://what3words.com) badge, and Google Maps navigation.
-3. **Smart Online Submission Form (`submit.html`)**:
+3. **Online Submission Form (`submit.html`)**:
    - Click-to-place map pin with **automatic reverse geocoding** (auto-fills latitude, longitude, and street address).
    - "Use Current Location" GPS button for mobile field submissions.
-   - Drag-and-drop photo uploader with client-side canvas optimization.
+   - Drag-and-drop photo uploader with canvas optimization.
    - Dynamic question prompts builder.
-   - Direct integration with GitHub Issues (Option A workflow) or JSON export.
+   - Direct integration with GitHub Issues or JSON export.
 
 ---
 
-## 🚀 How Student Submissions Work (Option A: GitOps)
+## 🚀 How Student Submissions Work
 
 ```mermaid
 flowchart TD
@@ -42,7 +41,7 @@ flowchart TD
     D --> E[Parses JSON payload & saves image]
     D --> F[Commits updated data/sensors.json to main]
     F --> G[Closes Issue with link to live observation]
-    G --> H[GitHub Pages redeploys live in under 60s!]
+    G --> H[GitHub Pages redeploys live]
 ```
 
 1. **Intake**: A student submits via `submit.html` or directly via GitHub Issue Form (`.github/ISSUE_TEMPLATE/sensor_submission.yml`).
@@ -53,7 +52,7 @@ flowchart TD
 
 ## 💻 Local Development & Preview
 
-Because this is built with standard web technologies (Vanilla HTML5, CSS3, and JavaScript), no compilation, build steps, or package installations are required!
+Because this is built with standard web technologies (Vanilla HTML5, CSS3, and JavaScript), no compilation, build steps, or package installations are required.
 
 To preview locally on your computer:
 

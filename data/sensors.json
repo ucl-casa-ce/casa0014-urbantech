@@ -4,6 +4,7 @@
     "title": "Shazam for Bats",
     "category": "Nature",
     "categorySlug": "nature",
+    "image": "assets/images/figQEOP.png",
     "description": "Installed in 2017 these Bioacoustics sensor are listening for wildlife in the park. They use Edge AI to detect bat calls using ultrasonic microphones. The project was a collaboration between UCL, LLDC and Intel. The devices are currently managed by UCL CASA.",
     "parameters": [
       "Bat detection counts"

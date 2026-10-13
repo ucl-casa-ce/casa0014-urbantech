@@ -1,5 +1,34 @@
 [
   {
+    "id": "shazam-for-bats",
+    "title": "Shazam for Bats",
+    "category": "Nature",
+    "categorySlug": "nature",
+    "description": "Installed in 2017 these Bioacoustics sensor are listening for wildlife in the park. They use Edge AI to detect bat calls using ultrasonic microphones. The project was a collaboration between UCL, LLDC and Intel. The devices are currently managed by UCL CASA.",
+    "parameters": [
+      "Bat detection counts"
+    ],
+    "questions": [
+      "How can we see how many bats were present last night?",
+      "Who is using this data?",
+      "What has the data taught us over the past few years?"
+    ],
+    "location": {
+      "address": "Iron Bridge, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E20 2AF, United Kingdom",
+      "lat": 51.537681,
+      "lng": -0.009903,
+      "googleMapsUrl": "https://maps.google.com/?q=51.537681,-0.009903",
+      "what3words": "///spent.played.vines",
+      "area": "Iron Bridge"
+    },
+    "contributor": {
+      "name": "Duncan Wilson",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2025/26"
+    }
+  },
+  {
     "id": "marylebone-air-quality",
     "title": "Air Quality and Pollution Monitoring Station",
     "category": "Air Quality",

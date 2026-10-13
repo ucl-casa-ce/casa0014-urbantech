@@ -1,5 +1,39 @@
 [
   {
+    "id": "weather-station-at-ops",
+    "title": "Weather station at OPS",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "description": "A davis vantage pro 2 on the nature smart garden. the weather station is providing local weather data to both the building (for building management input - especially outdoor temperature) and for the community group working in the garden lab.",
+    "parameters": [
+      "Temperature",
+      "Humidity",
+      "Wind Speed",
+      "Wind Direction",
+      "Luminance"
+    ],
+    "questions": [
+      "Who maintains or looks after the weather station?",
+      "How do I  access the weather information?",
+      "Does this station have historical data?"
+    ],
+    "location": {
+      "address": "Pool Street, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E20 2AF, United Kingdom",
+      "lat": 51.538549,
+      "lng": -0.00903,
+      "googleMapsUrl": "https://maps.google.com/?q=51.538549,-0.009030",
+      "what3words": "///looked.crab.darker",
+      "area": "Pool Street"
+    },
+    "contributor": {
+      "name": "Duncan Wilson",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2020/21"
+    },
+    "image": "assets/images/weather-station-at-ops.jpg"
+  },
+  {
     "id": "urban-heat-island",
     "title": "Urban Heat Island",
     "category": "Weather & Climate",

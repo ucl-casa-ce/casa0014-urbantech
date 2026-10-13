@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Urban Sensor Observation · CASA0014</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <span class="brand-badge">CASA0014</span>
+        <a href="index.html" class="brand-title">
+          Urban<span>Tech</span> Observatory
+        </a>
+      </div>
+      <nav class="nav-actions">
+        <a href="index.html" class="nav-link">← Return to Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Submit Container -->
+  <main class="submit-container">
+    <div class="form-header">
+      <h1>Submit an Urban Tech Observation</h1>
+      <p>Log a physical sensor, environmental station, or smart infrastructure you observed in the city. Your observation will be added to the live map and generate an individual sensor dossier.</p>
+    </div>
+
+    <form id="sensor-submission-form">
+      <div class="form-grid">
+
+        <!-- Section 1: Core Sensor Information -->
+        <div class="form-section">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Sensor Details
+          </h2>
+
+          <div class="form-group">
+            <label class="form-label" for="input-title">Sensor Name / Title *</label>
+            <input type="text" id="input-title" class="form-input" placeholder="e.g. Air Quality and pollution monitoring station" required>
+            <span class="form-hint">A clear, descriptive title naming what the device or installation is.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-category">Sensor Category *</label>
+            <select id="input-category" class="form-select" required>
+              <option value="air-quality">Air Quality & Environment</option>
+              <option value="mobility">Mobility, Traffic & People Counting</option>
+              <option value="weather">Weather, Microclimate & Water</option>
+              <option value="energy">Energy, Solar & Utilities</option>
+              <option value="infrastructure">Infrastructure, Telecoms & Living Lab</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-description">What is Being Sensed? *</label>
+            <textarea id="input-description" class="form-textarea" placeholder="Explain what technology is deployed, what it is measuring, and the organisation/network operating it (e.g. AURN / LAQN, TfL, LLDC, Borough Council)..." required></textarea>
+            <span class="form-hint">Describe the sensing hardware, enclosure, context, and operational network.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-params">Measured Parameters / Pollutants</label>
+            <input type="text" id="input-params" class="form-input" placeholder="e.g. Carbon Dioxide, NO2, Ozone, PM10, PM2.5, Weather">
+            <span class="form-hint">Separate parameters with commas.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Questions Raised When Visiting Site *</label>
+            <span class="form-hint">What critical questions does this sensor provoke about urban data, governance, or privacy?</span>
+            <div class="questions-builder" id="questions-container" style="margin-top: 0.5rem;">
+              <div class="question-row">
+                <input type="text" class="form-input question-input" placeholder="e.g. What was the air quality or traffic like when you visited?" required>
+              </div>
+              <div class="question-row">
+                <input type="text" class="form-input question-input" placeholder="e.g. How might a local citizen access this real-time data?" required>
+              </div>
+              <div class="question-row">
+                <input type="text" class="form-input question-input" placeholder="e.g. Who is this technology for and who benefits from it?" required>
+              </div>
+            </div>
+            <button type="button" class="add-q-btn" id="btn-add-question">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Add another question
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 2: Location & Spatial Metadata -->
+        <div class="form-section">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Location & Spatial Mapping
+          </h2>
+
+          <div class="loc-picker-bar">
+            <input type="text" id="input-search-address" class="form-input" placeholder="Search a London address or landmark..." style="flex: 1;">
+            <button type="button" id="btn-search-address" class="loc-btn">Find</button>
+            <button type="button" id="btn-get-location" class="loc-btn" title="Use GPS location">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg>
+              GPS
+            </button>
+          </div>
+
+          <!-- Interactive Click-to-Pin Map -->
+          <div id="picker-map"></div>
+          <span class="form-hint">Click anywhere on the map or drag the pin to set the exact sensor position.</span>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div class="form-group">
+              <label class="form-label" for="input-lat">Latitude *</label>
+              <input type="text" id="input-lat" class="form-input" placeholder="51.522521" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="input-lng">Longitude *</label>
+              <input type="text" id="input-lng" class="form-input" placeholder="-0.155051" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-address">Street Address / Area *</label>
+            <input type="text" id="input-address" class="form-input" placeholder="35 Marylebone Rd, Marylebone, London, NW1 5LS" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-w3w">what3words (Optional)</label>
+            <input type="text" id="input-w3w" class="form-input" placeholder="///gladiators.senior.ropes">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-gmaps">Google Maps URL</label>
+            <input type="url" id="input-gmaps" class="form-input" placeholder="https://maps.google.com/?q=51.522521,-0.155051">
+          </div>
+        </div>
+
+        <!-- Section 3: Photo Upload -->
+        <div class="form-section">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Field Photograph
+          </h2>
+
+          <div class="upload-zone" id="drop-zone">
+            <div class="upload-icon">📷</div>
+            <div style="font-weight: 600; color: #fff;">Drop sensor photo here or click to browse</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Supports JPEG, PNG, WEBP. Automatically optimized.</div>
+            <input type="file" id="file-input" accept="image/*" style="display: none;">
+          </div>
+
+          <div class="preview-box" id="preview-box">
+            <img id="preview-img" class="preview-img" src="" alt="Photo preview">
+            <button type="button" id="btn-remove-photo" class="btn-secondary" style="margin-top: 0.5rem; font-size: 0.8rem; padding: 0.35rem 0.75rem;">
+              Remove photo
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 4: Contributor Details -->
+        <div class="form-section">
+          <h2 class="section-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Contributor Attribution
+          </h2>
+
+          <div class="form-group">
+            <label class="form-label" for="input-author">Student / Researcher Name *</label>
+            <input type="text" id="input-author" class="form-input" placeholder="e.g. Duncan Wilson" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="input-cohort">MSc Cohort / Term</label>
+            <input type="text" id="input-cohort" class="form-input" placeholder="e.g. 2024/25">
+          </div>
+        </div>
+
+        <!-- Bottom Action Bar (Option A Workflow) -->
+        <div class="submit-actions">
+          <div>
+            <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Publish to Observatory</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+              Submits directly via GitHub Issue to automatically trigger the intake pipeline.
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem;">
+            <button type="button" id="btn-export-json" class="btn-secondary" title="Download raw JSON">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export JSON
+            </button>
+            <button type="submit" class="btn-primary" id="btn-submit-github">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              Submit via GitHub Issue
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </main>
+
+  <!-- Global Toast -->
+  <div id="global-toast" class="toast"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Submit Controller -->
+  <script src="js/submit.js"></script>
+</body>
+</html>

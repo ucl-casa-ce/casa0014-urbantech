@@ -1,0 +1,109 @@
+name: Process Sensor Submission
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publish-sensor:
+    # Trigger if issue has 'sensor-submission' label
+    if: contains(github.event.issue.labels.*.name, 'sensor-submission')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Parse Issue and Update Sensors Dataset
+        id: parse_issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const https = require('https');
+
+            const issueBody = context.payload.issue.body || '';
+            const match = issueBody.match(/<!-- SENSOR_DATA_START\s*([\s\S]*?)\s*SENSOR_DATA_END -->/);
+
+            if (!match) {
+              console.log('No valid SENSOR_DATA block found in issue body.');
+              return;
+            }
+
+            let sensorData;
+            try {
+              sensorData = JSON.parse(match[1]);
+            } catch (e) {
+              console.error('Failed to parse sensor JSON block:', e);
+              return;
+            }
+
+            // Look for attached image in issue body (e.g. ![...](https://user-images.githubusercontent.com/...))
+            const imageMatch = issueBody.match(/!\[.*?\]\((https:\/\/github\.com\/.*?\/assets\/.*?|https:\/\/user-images\.githubusercontent\.com\/.*?)\)/);
+            if (imageMatch && imageMatch[1]) {
+              const remoteImageUrl = imageMatch[1];
+              const ext = path.extname(remoteImageUrl.split('?')[0]) || '.jpg';
+              const localImagePath = `assets/images/${sensorData.id}${ext}`;
+              sensorData.image = localImagePath;
+              console.log(`Associated uploaded image: ${remoteImageUrl} -> ${localImagePath}`);
+            }
+
+            // Read existing dataset
+            const dataPath = path.join(process.env.GITHUB_WORKSPACE, 'data/sensors.json');
+            let sensors = [];
+            if (fs.existsSync(dataPath)) {
+              sensors = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+            }
+
+            // Remove existing sensor with same ID if updating, then prepend new
+            sensors = sensors.filter(s => s.id !== sensorData.id);
+            sensors.unshift(sensorData);
+
+            fs.writeFileSync(dataPath, JSON.stringify(sensors, null, 2), 'utf8');
+            console.log(`Successfully added sensor: ${sensorData.title} (${sensorData.id})`);
+
+            core.setOutput('sensor_id', sensorData.id);
+            core.setOutput('sensor_title', sensorData.title);
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/sensors.json assets/images/
+          git diff --quiet && git diff --staged --quiet || git commit -m "feat(observatory): add sensor observation '${{ steps.parse_issue.outputs.sensor_title }}'"
+          git push origin main
+
+      - name: Close Issue and Notify Student
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const sensorId = '${{ steps.parse_issue.outputs.sensor_id }}';
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            const liveUrl = `https://${owner}.github.io/${repo}/sensor.html?id=${sensorId}`;
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: context.payload.issue.number,
+              body: `🎉 **Success! Your urban sensor observation has been published!**\n\nYour submission has been automatically processed, mapped, and added to the CASA0014 Urban Tech Observatory:\n\n📍 **View your observation live:** [${liveUrl}](${liveUrl})\n\nThank you for contributing to the Connected Environments living archive!`
+            });
+
+            await github.rest.issues.update({
+              owner,
+              repo,
+              issue_number: context.payload.issue.number,
+              state: 'closed'
+            });

@@ -1,0 +1,174 @@
+[
+  {
+    "id": "marylebone-air-quality",
+    "title": "Air Quality and Pollution Monitoring Station",
+    "category": "Air Quality",
+    "categorySlug": "air-quality",
+    "image": "assets/images/slide-marylebone.png",
+    "imageCrop": "street-photo",
+    "description": "This air quality monitoring station is one of a hundred monitors forming part of the UK Automatic Urban and Rural Network (AURN) and London Air Quality Network (LAQN). It measures real-time roadside concentrations of key pollutants in one of central London's busiest traffic corridors.",
+    "parameters": [
+      "Carbon Dioxide (CO2)",
+      "Carbon Monoxide (CO)",
+      "Nitrogen Dioxide (NO2)",
+      "Ozone (O3)",
+      "PM10 Particulate (TEOM)",
+      "PM2.5 Particulate (TEOM)",
+      "Sulphur Dioxide (SO2)",
+      "Weather & Ambient Conditions"
+    ],
+    "questions": [
+      "What was the ambient air quality and traffic intensity like when you visited?",
+      "How might an everyday citizen or local resident find out current real-time pollution levels?",
+      "Who is this technology ultimately designed for — city planners, public health researchers, or everyday Londoners?"
+    ],
+    "location": {
+      "address": "35 Marylebone Rd, Marylebone, London, NW1 5LS",
+      "lat": 51.5225216,
+      "lng": -0.1550512,
+      "googleMapsUrl": "https://goo.gl/maps/SfTrtjzGEWoUMcCL6",
+      "what3words": "///gladiators.senior.ropes",
+      "area": "Marylebone, Westminster"
+    },
+    "contributor": {
+      "name": "Duncan Wilson",
+      "affiliation": "UCL CASA",
+      "date": "Feb 2020",
+      "cohort": "2020/21"
+    }
+  },
+  {
+    "id": "qeop-wifi-people-counter",
+    "title": "WiFi Spark Access Points & People Counting",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80",
+    "description": "Network of approximately 30 public WiFi Access Points deployed across Queen Elizabeth Olympic Park. Run for the London Legacy Development Corporation (LLDC) to provide public connectivity while conducting non-intrusive footfall and pedestrian movement density estimation.",
+    "parameters": [
+      "Public WiFi Connectivity",
+      "Probe Request Footfall Estimation",
+      "MAC Address Anonymisation",
+      "Pedestrian Dwell Time"
+    ],
+    "questions": [
+      "How is citizen privacy and MAC address randomization handled in public space counting?",
+      "How accurate is WiFi probe sensing compared to optical or thermal pedestrian sensors?",
+      "How does the LLDC use park footfall data in long-term legacy masterplanning?"
+    ],
+    "location": {
+      "address": "Bridge near Bat & Ball / Aquatics Centre, Queen Elizabeth Olympic Park, London E20 2AQ",
+      "lat": 51.53856,
+      "lng": -0.01639,
+      "googleMapsUrl": "https://maps.google.com/?q=51.53856,-0.01639",
+      "what3words": "///orbit.zones.timing",
+      "area": "Stratford, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "CASA Walkshop Archive",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2021",
+      "cohort": "2021/22"
+    }
+  },
+  {
+    "id": "copper-box-energy-solar",
+    "title": "Copper Box Arena Energy & Solar PV Array",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "image": "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+    "description": "Commercial-scale smart metering, building management integration, and rooftop photovoltaic array installed at the Copper Box Arena. Deployed as part of the Smart Sustainable Districts (SSD) programme to monitor building decarbonisation and localized renewable generation.",
+    "parameters": [
+      "Three-phase Power Draw (kW)",
+      "Solar PV Generation Yield (kWh)",
+      "HVAC Sub-metering",
+      "Building Management System (BMS) Telemetry"
+    ],
+    "questions": [
+      "How does peak solar generation align with arena event scheduling and grid demand?",
+      "What telemetry is publicly visible versus restricted to facility operators?",
+      "What role do legacy Olympic venues play in district-scale microgrid strategies?"
+    ],
+    "location": {
+      "address": "Copper Box Arena, Queen Elizabeth Olympic Park, London E20 3HB",
+      "lat": 51.54442,
+      "lng": -0.01986,
+      "googleMapsUrl": "https://maps.google.com/?q=51.54442,-0.01986",
+      "what3words": "///baking.flame.spoil",
+      "area": "Hackney Wick / Stratford"
+    },
+    "contributor": {
+      "name": "CASA Walkshop Archive",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2021",
+      "cohort": "2021/22"
+    }
+  },
+  {
+    "id": "timber-lodge-weather-station",
+    "title": "Timber Lodge Davis Weather Station",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "image": "https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=1200&q=80",
+    "description": "A Davis Vantage Pro2 automated weather station coupled with an Intel Edison telemetry gateway mounted on the roof of Timber Lodge in the north of the park. Measures microclimatic park conditions for habitat monitoring and maintenance scheduling.",
+    "parameters": [
+      "Barometric Pressure (hPa)",
+      "Ambient Temperature (°C)",
+      "Relative Humidity (%)",
+      "Wind Speed & Direction",
+      "Rainfall Rate (mm/hr)",
+      "Solar & UV Radiation"
+    ],
+    "questions": [
+      "How do park microclimates differ from the wider urban heat island of East London?",
+      "What maintenance routines (e.g. debris cleaning, sensor recalibration) are needed for outdoor weather stations?",
+      "How could open park weather data be integrated into automated park irrigation systems?"
+    ],
+    "location": {
+      "address": "Timber Lodge Cafe, 1A Honour Lea Ave, Queen Elizabeth Olympic Park, London E20 1DY",
+      "lat": 51.55171,
+      "lng": -0.01602,
+      "googleMapsUrl": "https://maps.google.com/?q=51.55171,-0.01602",
+      "what3words": "///wants.levels.sofa",
+      "area": "North Park, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "CASA Walkshop Archive",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2021",
+      "cohort": "2021/22"
+    }
+  },
+  {
+    "id": "ucl-east-marshgate-environmental",
+    "title": "UCL East Marshgate Environmental Sensor Network",
+    "category": "Air Quality",
+    "categorySlug": "air-quality",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "description": "Connected Environments Living Lab nodes deployed around UCL East Marshgate and Pool Street. Measures indoor and perimeter air metrics, particulate matter, and acoustic levels transmitted via campus LoRaWAN and MQTT brokers to CASA data platforms.",
+    "parameters": [
+      "Particulate Matter (PM1.0, PM2.5, PM10)",
+      "Volatile Organic Compounds (VOCs)",
+      "Acoustic SPL (dBA)",
+      "Temperature & Humidity"
+    ],
+    "questions": [
+      "How does campus building geometry affect local air dispersion and pollutant pooling?",
+      "How can university research sensor networks be bridged to public smart city initiatives?",
+      "What communication protocols (LoRaWAN vs WiFi vs Cellular) best suit continuous campus sensing?"
+    ],
+    "location": {
+      "address": "UCL East Marshgate, 7 Sidings St, London E20 2AE",
+      "lat": 51.53696,
+      "lng": -0.01258,
+      "googleMapsUrl": "https://maps.google.com/?q=51.53696,-0.01258",
+      "what3words": "///modern.wires.digit",
+      "area": "UCL East, Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "Connected Environments Lab",
+      "affiliation": "UCL CASA",
+      "date": "Sep 2023",
+      "cohort": "2023/24"
+    }
+  }
+]

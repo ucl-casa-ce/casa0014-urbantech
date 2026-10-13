@@ -1,0 +1,108 @@
+name: Urban Sensor Observation Submission
+description: Submit a new urban sensor observation to the CASA0014 Urban Tech Observatory
+title: "[Sensor Submission]: "
+labels: ["sensor-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Welcome to the CASA0014 Urban Tech Observatory!
+        Fill out the fields below to log a sensor you observed around the city. Once submitted, our automated pipeline will map it and generate your dedicated sensor dossier.
+
+  - type: input
+    id: sensor_title
+    attributes:
+      label: Sensor Name / Title
+      description: The official name or title of the sensor/station.
+      placeholder: e.g. Air Quality and pollution monitoring station
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Air Quality & Environment
+        - Mobility, Traffic & People Counting
+        - Weather, Microclimate & Water
+        - Energy, Solar & Utilities
+        - Infrastructure, Telecoms & Living Lab
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What is Being Sensed?
+      description: Describe what technology is deployed, what parameters are measured, and the operating network.
+      placeholder: This air quality monitoring station is one of a hundred monitors forming part of the AURN / LAQN...
+    validations:
+      required: true
+
+  - type: input
+    id: parameters
+    attributes:
+      label: Measured Parameters
+      description: Comma-separated list of pollutants or parameters.
+      placeholder: Carbon Dioxide, NO2, Ozone, PM10, PM2.5, Weather
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions Raised When Visiting Site
+      description: What inquiry questions does this sensor prompt regarding governance, privacy, or spatial sensing?
+      placeholder: |
+        - What was the ambient air quality and traffic like when you visited?
+        - How might a local citizen access this real-time data?
+        - Who is this technology for and who benefits from it?
+    validations:
+      required: true
+
+  - type: input
+    id: coordinates
+    attributes:
+      label: Coordinates (Latitude, Longitude)
+      placeholder: 51.522522, -0.155051
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Street Address / Location
+      placeholder: 35 Marylebone Rd, Marylebone, London, NW1 5LS
+    validations:
+      required: true
+
+  - type: input
+    id: what3words
+    attributes:
+      label: what3words
+      placeholder: ///gladiators.senior.ropes
+
+  - type: input
+    id: google_maps_url
+    attributes:
+      label: Google Maps Link
+      placeholder: https://goo.gl/maps/SfTrtjzGEWoUMcCL6
+
+  - type: input
+    id: student_name
+    attributes:
+      label: Contributor Name
+      placeholder: Duncan Wilson
+    validations:
+      required: true
+
+  - type: input
+    id: cohort
+    attributes:
+      label: MSc Cohort
+      placeholder: 2024/25
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Field Photograph
+        **Please attach your photo of the sensor below by dragging and dropping it into the issue text box:**

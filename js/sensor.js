@@ -10,6 +10,7 @@ let detailMapInstance = null;
 
 const CATEGORY_META = {
   'air-quality': { color: '#10b981', label: 'Air Quality' },
+  'nature': { color: '#24f5d9', label: 'Nature' },
   'mobility': { color: '#f59e0b', label: 'Mobility & People' },
   'energy': { color: '#3b82f6', label: 'Energy & Utilities' },
   'weather': { color: '#06b6d4', label: 'Weather & Climate' },

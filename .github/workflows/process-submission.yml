@@ -10,8 +10,11 @@ permissions:
 
 jobs:
   publish-sensor:
-    # Trigger if issue has 'sensor-submission' label
-    if: contains(github.event.issue.labels.*.name, 'sensor-submission')
+    # Trigger if issue has 'sensor-submission' label OR was created via submission form
+    if: |
+      contains(github.event.issue.labels.*.name, 'sensor-submission') ||
+      startsWith(github.event.issue.title, '[Sensor Submission]') ||
+      contains(github.event.issue.body, 'SENSOR_DATA_START')
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +35,6 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const https = require('https');
 
             const issueBody = context.payload.issue.body || '';
             const match = issueBody.match(/<!-- SENSOR_DATA_START\s*([\s\S]*?)\s*SENSOR_DATA_END -->/);
@@ -50,14 +52,31 @@ jobs:
               return;
             }
 
-            // Look for attached image in issue body (e.g. ![...](https://user-images.githubusercontent.com/...))
-            const imageMatch = issueBody.match(/!\[.*?\]\((https:\/\/github\.com\/.*?\/assets\/.*?|https:\/\/user-images\.githubusercontent\.com\/.*?)\)/);
+            // Look for attached image in issue body
+            const imageMatch = issueBody.match(/!\[.*?\]\((https:\/\/[^\s\)]+)\)/i);
             if (imageMatch && imageMatch[1]) {
               const remoteImageUrl = imageMatch[1];
               const ext = path.extname(remoteImageUrl.split('?')[0]) || '.jpg';
-              const localImagePath = `assets/images/${sensorData.id}${ext}`;
-              sensorData.image = localImagePath;
-              console.log(`Associated uploaded image: ${remoteImageUrl} -> ${localImagePath}`);
+              const localImageRelative = `assets/images/${sensorData.id}${ext}`;
+              const localImageFullPath = path.join(process.env.GITHUB_WORKSPACE, localImageRelative);
+
+              try {
+                const response = await fetch(remoteImageUrl);
+                if (response.ok) {
+                  const arrayBuffer = await response.arrayBuffer();
+                  fs.writeFileSync(localImageFullPath, Buffer.from(arrayBuffer));
+                  sensorData.image = localImageRelative;
+                  console.log(`Successfully downloaded and saved image: ${localImageRelative}`);
+                } else {
+                  console.warn(`Image HTTP fetch returned ${response.status}. Using remote URL.`);
+                  sensorData.image = remoteImageUrl;
+                }
+              } catch (imgErr) {
+                console.warn('Error downloading image, falling back to remote URL:', imgErr.message);
+                sensorData.image = remoteImageUrl;
+              }
+            } else if (!sensorData.image) {
+              sensorData.image = 'assets/images/marylebone-station.png';
             }
 
             // Read existing dataset

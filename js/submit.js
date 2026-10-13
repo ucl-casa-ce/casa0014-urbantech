@@ -324,6 +324,7 @@ function collectFormData() {
 
   const categoryMap = {
     'air-quality': 'Air Quality',
+    'nature': 'Nature',
     'mobility': 'Mobility & People',
     'energy': 'Energy & Utilities',
     'weather': 'Weather & Climate',

@@ -1,5 +1,36 @@
 [
   {
+    "id": "urban-heat-island",
+    "title": "Urban Heat Island",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "description": "One of 25 bespoke LoRaWAN air temperature sensors to examine Urban Heat Island Intensity (UHII) across London. PhD research at UCL CASA.",
+    "parameters": [
+      "Temperature",
+      "Humidity"
+    ],
+    "questions": [
+      "What is the current temperature in this environment?",
+      "Is this a good or bad example of urban heat island?",
+      "Who is using this data for analysis?"
+    ],
+    "location": {
+      "address": "Thornton Bridge, Thornton Street, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E20 2AD, United Kingdom",
+      "lat": 51.538484,
+      "lng": -0.010798,
+      "googleMapsUrl": "https://maps.google.com/?q=51.538484,-0.010798",
+      "what3words": "///deaf.shed.apple",
+      "area": "Thornton Bridge"
+    },
+    "contributor": {
+      "name": "Dongyi Ma",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2021/22"
+    },
+    "image": "assets/images/marylebone-station.png"
+  },
+  {
     "id": "shazam-for-bats",
     "title": "Shazam for Bats",
     "category": "Nature",

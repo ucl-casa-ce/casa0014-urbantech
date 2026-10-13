@@ -1473,43 +1473,331 @@ img {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints & Mobile Optimization
    ========================================================================== */
 
+/* Tablet & Smaller Laptops */
 @media (max-width: 960px) {
   .view-split {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
   .map-panel {
-    min-height: 400px;
-    height: 400px;
+    min-height: 380px;
+    height: 380px;
+  }
+  #map-container {
+    min-height: 380px;
+    height: 380px;
+  }
+  .cards-stream {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
   }
   .detail-grid {
     grid-template-columns: 1fr;
+    gap: 1.8rem;
   }
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 640px) {
+/* Tablets & Mobile Landscape */
+@media (max-width: 768px) {
   .header-container {
-    padding: 0.75rem 1rem;
-  }
-  .brand-title {
-    font-size: 1.05rem;
-  }
-  .hero-headline h1 {
-    font-size: 1.75rem;
-  }
-  .detail-title {
-    font-size: 1.85rem;
+    padding: 0.75rem 1.2rem;
   }
   .controls-bar {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.85rem;
   }
   .search-box {
     max-width: 100%;
+    min-width: 100%;
+  }
+
+  /* Smooth edge-to-edge horizontal scrolling for category pills */
+  .filter-pills {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 4px 0.2rem 8px;
+    gap: 0.5rem;
+  }
+  .filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.45rem 0.85rem;
+  }
+
+  /* Mobile Full-Width Segmented View Toggle */
+  .view-toggle {
+    width: 100%;
+    display: flex;
+  }
+  .view-toggle .toggle-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .detail-bottom-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .bottom-nav-card {
+    width: 100%;
+  }
+  .bottom-nav-card.next {
+    justify-content: flex-start;
+  }
+  .bottom-nav-text.text-right {
+    text-align: left;
+    align-items: flex-start;
+  }
+  .bottom-nav-title {
+    max-width: 100%;
+  }
+  .bottom-nav-center-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Standard Mobile Phones (<= 640px) */
+@media (max-width: 640px) {
+  /* Navigation Bar */
+  .header-container {
+    padding: 0.65rem 0.9rem;
+    gap: 0.5rem;
+  }
+  .brand-wrapper {
+    gap: 0.5rem;
+  }
+  .brand-badge {
+    display: none; /* Hide CASA badge on small mobile to prevent header overcrowding */
+  }
+  .brand-title {
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .nav-actions {
+    gap: 0.4rem;
+  }
+  /* On homepage, hide redundant 'Explore Map' link on mobile */
+  .site-header .nav-link.active {
+    display: none;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.6rem;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.75rem;
+    white-space: nowrap;
+    gap: 0.35rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 1.4rem 1rem 1rem;
+    gap: 1rem;
+  }
+  .hero-headline h1 {
+    font-size: 1.6rem;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  /* Main View Container */
+  .main-container {
+    padding: 0.75rem 0.85rem 3rem;
+  }
+  .map-panel, #map-container {
+    min-height: 310px;
+    height: 310px;
+    border-radius: var(--radius-md);
+  }
+  .cards-stream {
+    gap: 1rem;
+  }
+  .cards-stream .sensor-card {
+    min-height: auto !important;
+  }
+  .sensor-card .card-media {
+    height: 200px;
+  }
+  .card-body {
+    padding: 1.1rem;
+    gap: 0.75rem;
+  }
+  .card-title {
+    font-size: 1.15rem;
+  }
+  .card-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .card-footer {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  /* Sensor Detail Page */
+  .detail-container {
+    padding: 1rem 0.85rem 3.5rem;
+    gap: 1.4rem;
+  }
+  .detail-top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .detail-top-nav .back-nav {
+    font-size: 0.85rem;
+  }
+  .sensor-nav-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    width: 100%;
+  }
+  .sensor-nav-counter {
+    text-align: center;
+    width: 100%;
+  }
+  .sensor-nav-buttons {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .nav-control-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.88rem;
+  }
+  .detail-title {
+    font-size: 1.65rem;
+    line-height: 1.22;
+  }
+  .detail-byline {
+    font-size: 0.85rem;
+    gap: 0.75rem;
+  }
+  .detail-photo-img {
+    height: 240px;
+  }
+  .minimap-card, #detail-map {
+    height: 220px;
+  }
+  .content-card {
+    padding: 1.15rem;
+    gap: 0.85rem;
+  }
+  .content-card h2, .content-card h3 {
+    font-size: 1.1rem;
+  }
+  .questions-list li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .loc-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .loc-label {
+    min-width: auto;
+  }
+
+  /* Submission Page */
+  .submit-container {
+    padding: 1rem 0.85rem 4rem;
+    gap: 1.5rem;
+  }
+  .submit-header h1 {
+    font-size: 1.65rem;
+    line-height: 1.22;
+  }
+  .submit-header p {
+    font-size: 0.88rem;
+  }
+  .form-section {
+    padding: 1.15rem;
+    gap: 1.1rem;
+  }
+  .form-section .section-title {
+    font-size: 1.1rem;
+  }
+  #picker-map {
+    height: 240px;
+  }
+  .loc-picker-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .loc-picker-bar .form-input {
+    min-width: 100%;
+  }
+  .loc-picker-bar .loc-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem;
+  }
+  .coords-input-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .submit-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .submit-actions button {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Very Small Devices (<= 380px) */
+@media (max-width: 380px) {
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  .hero-headline h1 {
+    font-size: 1.45rem;
+  }
+  .detail-title {
+    font-size: 1.45rem;
+  }
+  .filter-pill {
+    font-size: 0.78rem;
+    padding: 0.38rem 0.75rem;
   }
 }

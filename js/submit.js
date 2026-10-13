@@ -418,7 +418,7 @@ SENSOR_DATA_END -->
   // Open GitHub Issue creation in new window
   window.open(issueUrl, '_blank');
 
-  showToast('Opening GitHub Issue with pre-filled sensor data...');
+  showToast('Opening GitHub... Remember to drag your photo into the issue box!');
 }
 
 function showToast(message) {

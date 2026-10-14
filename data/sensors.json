@@ -1,35 +1,5 @@
 [
   {
-    "id": "test",
-    "title": "test",
-    "category": "Weather & Climate",
-    "categorySlug": "weather",
-    "description": "sss",
-    "parameters": [
-      "ddd"
-    ],
-    "questions": [
-      "ccc",
-      "ccc",
-      "ccc"
-    ],
-    "location": {
-      "address": "One Pool Street, 1, Pool Street, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E20 2AF, United Kingdom",
-      "lat": 51.538518,
-      "lng": -0.00996,
-      "googleMapsUrl": "https://maps.google.com/?q=51.538518,-0.009960",
-      "what3words": "///hello.there.again",
-      "area": "One Pool Street"
-    },
-    "contributor": {
-      "name": "dw",
-      "affiliation": "UCL CASA Connected Environments",
-      "date": "Oct 2026",
-      "cohort": "221"
-    },
-    "image": "assets/images/test.jpg"
-  },
-  {
     "id": "cctv-and-weird-little-screen",
     "title": "cctv and weird little screen",
     "category": "Mobility & People",

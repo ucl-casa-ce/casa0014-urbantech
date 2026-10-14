@@ -1,5 +1,37 @@
 [
   {
+    "id": "cctv-and-weird-little-screen",
+    "title": "cctv and weird little screen",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "description": "i dont know",
+    "parameters": [
+      "people",
+      "crime",
+      "something else?"
+    ],
+    "questions": [
+      "who has access",
+      "what are they actually using it for",
+      "is video stored, where and how long for"
+    ],
+    "location": {
+      "address": "Waterden Road, East Wick, Hackney Wick, London Borough of Hackney, Greater London, England, E20 3BA, United Kingdom",
+      "lat": 51.544112,
+      "lng": -0.017128,
+      "googleMapsUrl": "https://maps.google.com/?q=51.544112,-0.017128",
+      "what3words": "",
+      "area": "Waterden Road"
+    },
+    "contributor": {
+      "name": "tom grout",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "26/7"
+    },
+    "image": "assets/images/marylebone-station.png"
+  },
+  {
     "id": "milimetre-wave-rader-sensor",
     "title": "Milimetre-wave Rader Sensor",
     "category": "Mobility & People",

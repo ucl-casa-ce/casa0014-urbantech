@@ -184,7 +184,7 @@ export default {
           method: "PUT",
           headers: ghHeaders,
           body: JSON.stringify({
-            message: `feat(observatory): add sensor observation '${title}' [skip ci]`,
+            message: `feat(observatory): add sensor observation '${title}'`,
             content: updatedBase64,
             sha: getData.sha,
             branch: "main"

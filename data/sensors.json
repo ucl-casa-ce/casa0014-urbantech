@@ -1,5 +1,36 @@
 [
   {
+    "id": "milimetre-wave-rader-sensor",
+    "title": "Milimetre-wave Rader Sensor",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "description": "Movement and presence of moving objects (pedestrians, vehicles) within its detection zone.",
+    "parameters": [
+      "Presence of objects",
+      "movement speed"
+    ],
+    "questions": [
+      "What kind of data does it collect?",
+      "Which organisation receives and processes sensor readings?",
+      "Is the public clearly informed that this sensor is installed here?"
+    ],
+    "location": {
+      "address": "La Gelateria, 1-2, West Park Walk, East Village, Stratford, London Borough of Newham, 大倫敦;大伦敦, 英格兰;英格蘭, E20 1DH, 英国;英國",
+      "lat": 51.546454,
+      "lng": -0.00937,
+      "googleMapsUrl": "https://maps.google.com/?q=51.546454,-0.009370",
+      "what3words": "",
+      "area": "La Gelateria"
+    },
+    "contributor": {
+      "name": "Jiahan Xie",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026"
+    },
+    "image": "assets/images/marylebone-station.png"
+  },
+  {
     "id": "security-camera",
     "title": "Security Camera",
     "category": "Infrastructure & Living Lab",

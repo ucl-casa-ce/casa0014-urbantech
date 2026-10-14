@@ -1,5 +1,33 @@
 [
   {
+    "id": "security-camera",
+    "title": "Security Camera",
+    "category": "Infrastructure & Living Lab",
+    "categorySlug": "infrastructure",
+    "description": "I believe this security camera employs machine learning algorithms related to facial recognition to detect suspicious individuals and transmit real-time data to the police station.",
+    "parameters": [],
+    "questions": [
+      "Will this type of camera capture the faces of passersby in real time and cause privacy issues?",
+      "Will continuous operation cause any problems for it?",
+      "How to ensure the accuracy of the algorithm within the limited volume of the device？"
+    ],
+    "location": {
+      "address": "Team UCL Gym, 1, Pool Street, Mill Meads, Stratford, London Borough of Newham, 大倫敦;大伦敦, 英格兰;英格蘭, E20 2AF, 英国;英國",
+      "lat": 51.538335,
+      "lng": -0.009886,
+      "googleMapsUrl": "https://maps.google.com/?q=51.538335,-0.009886",
+      "what3words": "",
+      "area": "Team UCL Gym"
+    },
+    "contributor": {
+      "name": "Shuoyan Li",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2025/26"
+    },
+    "image": "assets/images/marylebone-station.png"
+  },
+  {
     "id": "weather-station-at-ops",
     "title": "Weather station at OPS",
     "category": "Weather & Climate",

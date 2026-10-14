@@ -3,7 +3,7 @@
 [![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=flat-square&logo=github)](https://ucl-casa-ce.github.io/casa0014-urbantech/)
 [![UCL CASA](https://img.shields.io/badge/UCL-CASA0014-purple?style=flat-square)](https://www.ucl.ac.uk/bartlett/casa/)
 
-An interactive web platform and living spatial archive for [UCL CASA0014](https://github.com/ucl-casa-ce/casa0014) (*Connected Environments*) students to observe, document, analyse, and map physical urban sensors and IoT infrastructure across London.
+An [interactive web platform](https://ucl-casa-ce.github.io/casa0014-urbantech/) and living spatial archive for [UCL CASA0014](https://github.com/ucl-casa-ce/casa0014) (*Connected Environments*) students to observe, document, analyse, and map physical urban sensors and IoT infrastructure across London.
 
 This platform provides a searchable observatory featuring interactive maps, detail pages, and automated GitHub-driven submission workflows.
 

@@ -158,8 +158,8 @@
 
           <div class="preview-box" id="preview-box">
             <img id="preview-img" class="preview-img" src="" alt="Photo preview">
-            <div style="margin-top: 0.6rem; padding: 0.6rem 0.8rem; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: 6px; font-size: 0.8rem; color: #cbd5e1; text-align: left;">
-              ℹ️ <strong>GitHub Photo Step:</strong> When GitHub opens after clicking <em>Submit</em>, remember to drag and drop your photo into the GitHub issue box so GitHub can host it!
+            <div style="margin-top: 0.6rem; padding: 0.5rem 0.8rem; background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 6px; font-size: 0.8rem; color: #cbd5e1; text-align: left;">
+              ✨ Photo optimized automatically. It will be uploaded and mapped with your observation.
             </div>
             <button type="button" id="btn-remove-photo" class="btn-secondary" style="margin-top: 0.5rem; font-size: 0.8rem; padding: 0.35rem 0.75rem;">
               Remove photo
@@ -185,12 +185,12 @@
           </div>
         </div>
 
-        <!-- Bottom Action Bar (Option A Workflow) -->
+        <!-- Bottom Action Bar -->
         <div class="submit-actions">
           <div>
             <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Publish to Observatory</div>
             <div style="font-size: 0.85rem; color: var(--text-muted);">
-              Submits directly via GitHub Issue to automatically trigger the intake pipeline.
+              Submits directly to the live map and generates a dedicated sensor dossier page.
             </div>
           </div>
 
@@ -199,9 +199,9 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Export JSON
             </button>
-            <button type="submit" class="btn-primary" id="btn-submit-github">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-              Submit via GitHub Issue
+            <button type="submit" class="btn-primary" id="btn-submit-observation">
+              <svg id="btn-submit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span id="btn-submit-text">Publish Observation</span>
             </button>
           </div>
         </div>
@@ -209,6 +209,30 @@
       </div>
     </form>
   </main>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="modal-overlay">
+    <div class="modal-card" style="background: #111827; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; max-width: 480px; width: 90%; padding: 2.2rem; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75); position: relative;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); border: 2px solid #10b981; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.2rem;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 style="font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem;">Observation Published!</h2>
+      <p id="success-modal-desc" style="color: #94a3b8; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.8rem;">
+        Your sensor observation has been successfully saved and added to the CASA0014 Urban Tech Observatory.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a id="btn-view-live" href="#" class="btn-primary" style="text-align: center; justify-content: center; text-decoration: none; padding: 0.75rem 1.25rem;">
+          View Your Sensor Dossier →
+        </a>
+        <a href="index.html" class="btn-secondary" style="text-align: center; justify-content: center; text-decoration: none; padding: 0.7rem 1.25rem;">
+          Return to Observatory Map
+        </a>
+        <button type="button" id="btn-submit-another" style="border: none; background: transparent; color: #94a3b8; cursor: pointer; padding: 0.5rem; font-size: 0.85rem; text-decoration: underline;">
+          Submit another observation
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Global Toast -->
   <div id="global-toast" class="toast"></div>

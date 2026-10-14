@@ -263,12 +263,32 @@ function setupFormEventListeners() {
     });
   }
 
-  // Form Submission via GitHub Issue (Option A)
+  // Cloudflare Worker Intake Endpoint
+  // Paste your deployed Cloudflare Worker URL here once deployed:
+  // e.g. "https://casa0014-sensor-intake.d-j-wilson.workers.dev"
+  const WORKER_ENDPOINT = "https://casa0014-sensor-intake.d-j-wilson.workers.dev/";
+
+  // Form Submission
   const submitForm = document.getElementById('sensor-submission-form');
   if (submitForm) {
-    submitForm.addEventListener('submit', (e) => {
+    submitForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      handleOptionASubmission();
+      await handleFormSubmission(WORKER_ENDPOINT);
+    });
+  }
+
+  // Setup Success Modal "Submit Another" button
+  const submitAnotherBtn = document.getElementById('btn-submit-another');
+  if (submitAnotherBtn) {
+    submitAnotherBtn.addEventListener('click', () => {
+      const modal = document.getElementById('success-modal');
+      if (modal) modal.classList.remove('active');
+      submitForm.reset();
+      uploadedPhotoDataUrl = null;
+      uploadedFileName = '';
+      if (previewBox) previewBox.style.display = 'none';
+      if (dropZone) dropZone.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -336,7 +356,6 @@ function collectFormData() {
     title,
     category: categoryMap[category] || 'Urban Sensor',
     categorySlug: category,
-    image: uploadedPhotoDataUrl || 'assets/images/default-sensor.jpg',
     description,
     parameters: document.getElementById('input-params')?.value.split(',').map(s => s.trim()).filter(Boolean) || [],
     questions,
@@ -346,7 +365,7 @@ function collectFormData() {
       lng,
       googleMapsUrl: gmapsUrl,
       what3words: w3w,
-      area: address ? address.split(',')[0] : 'London'
+      area: address ? address.split(',')[0].trim() : 'London'
     },
     contributor: {
       name: authorName || 'CASA Student',
@@ -358,15 +377,101 @@ function collectFormData() {
 }
 
 /**
- * Option A Submission Handler:
- * Generates formatted GitHub Issue URL for ucl-casa-ce/casa0014-urbantech
+ * Main Submission Handler
+ * If WORKER_ENDPOINT is set, submits directly via Cloudflare Worker.
+ * Otherwise, falls back to generating a GitHub Issue.
  */
-function handleOptionASubmission() {
+async function handleFormSubmission(workerEndpoint) {
   const payload = collectFormData();
   if (!payload) return;
 
-  const issueTitle = `[Sensor Submission] ${payload.title}`;
+  // Fallback to GitHub Issue if Worker URL is not configured yet
+  if (!workerEndpoint || workerEndpoint.trim() === "") {
+    handleOptionAGitHubFallback(payload);
+    return;
+  }
 
+  const submitBtn = document.getElementById('btn-submit-observation');
+  const submitText = document.getElementById('btn-submit-text');
+  const submitIcon = document.getElementById('btn-submit-icon');
+
+  // Set Loading State
+  if (submitBtn) submitBtn.disabled = true;
+  if (submitText) submitText.textContent = 'Publishing observation...';
+  if (submitIcon) {
+    submitIcon.outerHTML = `
+      <svg id="btn-submit-icon" class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation: spin 1s linear infinite;">
+        <circle cx="12" cy="12" r="10" stroke-opacity="0.25"/>
+        <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/>
+      </svg>
+    `;
+  }
+
+  try {
+    const response = await fetch(workerEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...payload,
+        imageData: uploadedPhotoDataUrl || null,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || `Server returned ${response.status}`);
+    }
+
+    // Success: Show Modal
+    const modal = document.getElementById('success-modal');
+    const viewLiveBtn = document.getElementById('btn-view-live');
+    const modalDesc = document.getElementById('success-modal-desc');
+
+    if (modalDesc) {
+      modalDesc.innerHTML = `Your observation of <strong>${escapeHtml(payload.title)}</strong> has been saved and published to the live observatory!`;
+    }
+
+    if (viewLiveBtn) {
+      const destinationUrl = result.url || `sensor.html?id=${result.id || payload.id}`;
+      viewLiveBtn.href = destinationUrl;
+    }
+
+    if (modal) {
+      modal.classList.add('active');
+    } else {
+      showToast('Observation successfully published!');
+      window.location.href = `sensor.html?id=${result.id || payload.id}`;
+    }
+
+  } catch (err) {
+    console.error('Submission error:', err);
+    showToast(`Submission error: ${err.message}`);
+    alert(`We encountered an issue submitting your observation:\n\n${err.message}\n\nPlease try again or export JSON.`);
+  } finally {
+    // Reset Loading State
+    if (submitBtn) submitBtn.disabled = false;
+    if (submitText) submitText.textContent = 'Publish Observation';
+    const currentIcon = document.getElementById('btn-submit-icon');
+    if (currentIcon) {
+      currentIcon.outerHTML = `
+        <svg id="btn-submit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      `;
+    }
+  }
+}
+
+/**
+ * Option A Fallback: Generates formatted GitHub Issue URL
+ */
+function handleOptionAGitHubFallback(payload) {
+  showToast('Worker endpoint not set. Opening GitHub Issue...');
+
+  const issueTitle = `[Sensor Submission] ${payload.title}`;
   const issueBody = `### Sensor Name / Title
 ${payload.title}
 
@@ -396,16 +501,16 @@ ${payload.questions.map(q => `- ${q}`).join('\n')}
 ---
 <!-- SENSOR_DATA_START
 ${JSON.stringify({
-  id: payload.id,
-  title: payload.title,
-  category: payload.category,
-  categorySlug: payload.categorySlug,
-  description: payload.description,
-  parameters: payload.parameters,
-  questions: payload.questions,
-  location: payload.location,
-  contributor: payload.contributor
-}, null, 2)}
+    id: payload.id,
+    title: payload.title,
+    category: payload.category,
+    categorySlug: payload.categorySlug,
+    description: payload.description,
+    parameters: payload.parameters,
+    questions: payload.questions,
+    location: payload.location,
+    contributor: payload.contributor
+  }, null, 2)}
 SENSOR_DATA_END -->
 
 ### Field Photo
@@ -415,10 +520,18 @@ SENSOR_DATA_END -->
   const repoTarget = "ucl-casa-ce/casa0014-urbantech";
   const issueUrl = `https://github.com/${repoTarget}/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}&labels=sensor-submission`;
 
-  // Open GitHub Issue creation in new window
   window.open(issueUrl, '_blank');
+}
 
-  showToast('Opening GitHub... Remember to drag your photo into the issue box!');
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>"']/g, (m) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  })[m]);
 }
 
 function showToast(message) {
@@ -433,3 +546,4 @@ function showToast(message) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 3500);
 }
+

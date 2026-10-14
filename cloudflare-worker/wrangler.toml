@@ -1,0 +1,11 @@
+name = "casa0014-sensor-intake"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+REPO_OWNER = "ucl-casa-ce"
+REPO_NAME = "casa0014-urbantech"
+
+# Note: GITHUB_TOKEN should be set via:
+# npx wrangler secret put GITHUB_TOKEN
+# Or in Cloudflare Dashboard -> Settings -> Variables and Secrets -> Add Secret

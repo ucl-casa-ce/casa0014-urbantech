@@ -1,5 +1,33 @@
 [
   {
+    "id": "echo-bat-box",
+    "title": "echo bat box",
+    "category": "Nature",
+    "categorySlug": "nature",
+    "description": "bats swim in the water and river",
+    "parameters": [],
+    "questions": [
+      "how does it detect bat?",
+      "how can it keep personal privacy?",
+      "what is it power"
+    ],
+    "location": {
+      "address": "Outer Circle, Fitzrovia, 卡姆登區, 大倫敦;大伦敦, 英格兰;英格蘭, NW1 4JE, 英国;英國",
+      "lat": 51.54112,
+      "lng": 0.01402,
+      "googleMapsUrl": "https://maps.google.com/?q=51.529695,-0.146149",
+      "what3words": "",
+      "area": "Outer Circle"
+    },
+    "contributor": {
+      "name": "Zeyu Cheng",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2024/25"
+    },
+    "image": "assets/images/echo-bat-box.jpg"
+  },
+  {
     "id": "vivacity-labs",
     "title": "Vivacity Labs",
     "category": "Energy & Utilities",

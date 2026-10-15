@@ -1,5 +1,33 @@
 [
   {
+    "id": "vivacity-labs",
+    "title": "Vivacity Labs",
+    "category": "Energy & Utilities",
+    "categorySlug": "energy",
+    "description": "The sensor measures ambient natural light levels, allowing the streetlight to switch on when it gets dark and off when daylight returns.",
+    "parameters": [],
+    "questions": [
+      "Who sets the light thresholds, and how do these settings balance energy savings with pedestrians’ needs?",
+      "Who decides when the streetlights turn on?",
+      "Does the sensor collect or store any data?"
+    ],
+    "location": {
+      "address": "Westfield Avenue, Stratford, London E20, UK",
+      "lat": 51.54102,
+      "lng": -0.00666,
+      "googleMapsUrl": "https://maps.google.com/?q=51.54102,-0.00666",
+      "what3words": "",
+      "area": "Westfield Avenue"
+    },
+    "contributor": {
+      "name": "Zhebing Xia",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2024/25"
+    },
+    "image": "assets/images/vivacity-labs.jpg"
+  },
+  {
     "id": "traffic-lights-sensor",
     "title": "Traffic lights sensor",
     "category": "Mobility & People",

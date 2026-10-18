@@ -1,5 +1,37 @@
 [
   {
+    "id": "airport-boarding-pass-optical-scanner",
+    "title": "Airport Boarding Pass Optical Scanner",
+    "category": "Mobility & People",
+    "categorySlug": "mobility",
+    "description": "The device uses an optical scanner to read barcodes or QR codes on passengers' boarding passes. The scanned data is decoded and checked against the airline's boarding management system.",
+    "parameters": [
+      "Barcode and QR code patterns",
+      "decoded boarding pass data",
+      "scan success or failure"
+    ],
+    "questions": [
+      "What happens if the scanner fails, and how could this affect boarding efficiency?",
+      "Who can access the collected boarding data, and how long is it stored?",
+      "How is passengers' personal information protected when their boarding passes are scanned?"
+    ],
+    "location": {
+      "address": "Gate 55D, North Terminal, London Gatwick Airport, Horley, West Sussex, RH6 0NP, UK",
+      "lat": 51.15823,
+      "lng": -0.17873,
+      "googleMapsUrl": "https://www.google.com/maps?q=51.15823,-0.17873",
+      "what3words": "",
+      "area": "Gate 55D"
+    },
+    "contributor": {
+      "name": "Monong Yang",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/27"
+    },
+    "image": "assets/images/airport-boarding-pass-optical-scanner.jpg"
+  },
+  {
     "id": "echo-bat-box",
     "title": "echo bat box",
     "category": "Nature",

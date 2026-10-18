@@ -1,5 +1,34 @@
 [
   {
+    "id": "smart-streetlight-ptz-surveillance-node",
+    "title": "Smart Streetlight & PTZ Surveillance Node",
+    "category": "Infrastructure & Living Lab",
+    "categorySlug": "infrastructure",
+    "description": "The people who walk around the park",
+    "parameters": [],
+    "questions": [
+      "Which environmental variables does this device measure, and how frequently are readings recorded?",
+      "Which organisation operates the sensor, and can local residents access its real-time or historical data?",
+      "How are the readings transmitted, stored and used in urban planning or environmental management?",
+      "Does the system perform automated analytics such as pedestrian counting or object detection, or is it used only for conventional CCTV monitoring?"
+    ],
+    "location": {
+      "address": "Queen Elizabeth Olympic Park, London E20, United Kingdom",
+      "lat": 51.539992,
+      "lng": -0.013175,
+      "googleMapsUrl": "https://maps.google.com/?q=51.539992,-0.013175",
+      "what3words": "",
+      "area": "Queen Elizabeth Olympic Park"
+    },
+    "contributor": {
+      "name": "Zhao Jialing",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/27"
+    },
+    "image": "assets/images/smart-streetlight-ptz-surveillance-node.jpg"
+  },
+  {
     "id": "networked-cctv-surveillance-system",
     "title": "Networked CCTV Surveillance System",
     "category": "Infrastructure & Living Lab",

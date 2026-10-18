@@ -1,5 +1,36 @@
 [
   {
+    "id": "networked-cctv-surveillance-system",
+    "title": "Networked CCTV Surveillance System",
+    "category": "Infrastructure & Living Lab",
+    "categorySlug": "infrastructure",
+    "description": "A WCCTV surveillance camera mounted on a street lighting pole. The camera captures visual information from the surrounding public space. A separate unit above it may provide additional detection or warning functions, although its exact purpose is unclear.\nWCCTV offers networked surveillance systems that support remote monitoring via mobile networks. However, the communication method used by this particular installation has not been confirmed.",
+    "parameters": [
+      "Visual imagery",
+      "movement and activity in public space"
+    ],
+    "questions": [
+      "Is the footage monitored by people or analysed automatically?",
+      "How is the footage transmitted and stored?",
+      "How is people's privacy protected in this public space?"
+    ],
+    "location": {
+      "address": "German Doner Kebab, 50, Broadway, Stratford, London Borough of Newham, 大倫敦;大伦敦, 英格兰;英格蘭, E15 1NG, 英国;英國",
+      "lat": 51.541064,
+      "lng": 0.001642,
+      "googleMapsUrl": "https://maps.google.com/?q=51.541064,0.001642",
+      "what3words": "",
+      "area": "German Doner Kebab"
+    },
+    "contributor": {
+      "name": "Mengjiao Zhao",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/2027"
+    },
+    "image": "assets/images/networked-cctv-surveillance-system.jpg"
+  },
+  {
     "id": "airport-boarding-pass-optical-scanner",
     "title": "Airport Boarding Pass Optical Scanner",
     "category": "Mobility & People",

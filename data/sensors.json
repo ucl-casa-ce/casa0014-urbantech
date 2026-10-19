@@ -1,5 +1,35 @@
 [
   {
+    "id": "dynamic-ambient-noise-sensor",
+    "title": "Dynamic Ambient Noise Sensor",
+    "category": "Air Quality",
+    "categorySlug": "air-quality",
+    "description": "-  The level of the background noise in the environment \n- Seems to be adjusting the speaker volume in the station to filter out the noise from the surroundings (I.e traffic noise, people noise etc)\n- It has to function periodically in certain interval’s",
+    "parameters": [
+      "Decibels (dB)"
+    ],
+    "questions": [
+      "I only notice one sensor, is that enough",
+      "How does it determine if a certain sound is classified as a noise?",
+      "How old is this technology?"
+    ],
+    "location": {
+      "address": "DLR, Smythe Street, Saint Matthias Estate, Poplar, London Borough of Tower Hamlets, Greater London, England, E14 0HF, United Kingdom",
+      "lat": 51.510252,
+      "lng": -0.013116,
+      "googleMapsUrl": "https://maps.google.com/?q=51.510252,-0.013116",
+      "what3words": "",
+      "area": "DLR"
+    },
+    "contributor": {
+      "name": "RABEE ALI",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/2027"
+    },
+    "image": "assets/images/dynamic-ambient-noise-sensor.jpg"
+  },
+  {
     "id": "smoke-alarm",
     "title": "Smoke alarm",
     "category": "Air Quality",

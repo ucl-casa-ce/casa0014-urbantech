@@ -1,5 +1,38 @@
 [
   {
+    "id": "ucl-east-rooftop-iot-weather-station",
+    "title": "UCL East Rooftop IoT Weather Station",
+    "category": "Weather & Climate",
+    "categorySlug": "weather",
+    "description": "This rooftop environmental monitoring station is installed at UCL East’s One Pool Street, near the Garden Lab. Its exposed sensor array observes local microclimate conditions. UCL describes the Garden Lab weather station as collecting data on temperature, atmospheric pressure, wind and rainfall. The station forms part of UCL East’s living-laboratory infrastructure, supporting environmental research, live monitoring and the Garden Lab’s digital twin.",
+    "parameters": [
+      "Temperature",
+      "atmospheric pressure",
+      "wind",
+      "rainfall"
+    ],
+    "questions": [
+      "Who owns and governs the data collected by this weather station, and who is permitted to access or reuse it?",
+      "How is the station calibrated and maintained, and how are missing data, sensor drift and measurement uncertainty communicated to users?",
+      "How representative is a single rooftop location of microclimate conditions across the wider UCL East campus and Queen Elizabeth Olympic Park?"
+    ],
+    "location": {
+      "address": "One Pool Street, Stratford, London E20 2AF",
+      "lat": 51.538298,
+      "lng": -0.009865,
+      "googleMapsUrl": "https://maps.google.com/?q=51.538298,-0.009865",
+      "what3words": "",
+      "area": "One Pool Street"
+    },
+    "contributor": {
+      "name": "Aubree Dai",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/27"
+    },
+    "image": "assets/images/ucl-east-rooftop-iot-weather-station.jpg"
+  },
+  {
     "id": "smoke-alarm",
     "title": "Smoke alarm",
     "category": "Air Quality",

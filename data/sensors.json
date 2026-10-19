@@ -1,5 +1,35 @@
 [
   {
+    "id": "smoke-alarm",
+    "title": "Smoke alarm",
+    "category": "Air Quality",
+    "categorySlug": "air-quality",
+    "description": "Smoke particles in the air",
+    "parameters": [
+      "Airborne smoke particulates"
+    ],
+    "questions": [
+      "What threshold concentration of smoke particulates will trigger the alarm? How is this range calibrated, to avoid both false alarms and missed fire events?",
+      "How are false positive readings (e.g. cooking vapour, dust) filtered or handled?",
+      "How often does the sensor need calibration or maintenance over its lifespan?"
+    ],
+    "location": {
+      "address": "21, Jupp Road West, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E15 2HS, United Kingdom",
+      "lat": 51.538069,
+      "lng": -0.003115,
+      "googleMapsUrl": "https://maps.google.com/?q=51.538069,-0.003115",
+      "what3words": "",
+      "area": "21"
+    },
+    "contributor": {
+      "name": "Qingshan Zhang",
+      "affiliation": "UCL CASA Connected Environments",
+      "date": "Oct 2026",
+      "cohort": "2026/27"
+    },
+    "image": "assets/images/smoke-alarm.jpg"
+  },
+  {
     "id": "ucl-east-rooftop-iot-weather-station",
     "title": "UCL East Rooftop IoT Weather Station",
     "category": "Weather & Climate",
@@ -31,36 +61,6 @@
       "cohort": "2026/27"
     },
     "image": "assets/images/ucl-east-rooftop-iot-weather-station.jpg"
-  },
-  {
-    "id": "smoke-alarm",
-    "title": "Smoke alarm",
-    "category": "Air Quality",
-    "categorySlug": "air-quality",
-    "description": "Smoke particles in the air",
-    "parameters": [
-      "Airborne smoke particulates"
-    ],
-    "questions": [
-      "What power supply does the smoke alarm use? Is it mains electric, battery, or a hybrid system?",
-      "What threshold concentration of smoke particulates will trigger the alarm? How is this range calibrated, to avoid both false alarms and missed fire events?",
-      "How often does the sensor need calibration or maintenance over its lifespan?"
-    ],
-    "location": {
-      "address": "Eleanor Rosa House, 2, Lett Road, Mill Meads, Stratford, London Borough of Newham, Greater London, England, E15 2RA, United Kingdom",
-      "lat": 51.537916,
-      "lng": -0.002995,
-      "googleMapsUrl": "https://maps.google.com/?q=51.537916,-0.002995",
-      "what3words": "",
-      "area": "Eleanor Rosa House"
-    },
-    "contributor": {
-      "name": "Qingshan Zhang",
-      "affiliation": "UCL CASA Connected Environments",
-      "date": "Oct 2026",
-      "cohort": "2026/27"
-    },
-    "image": "assets/images/smoke-alarm.jpg"
   },
   {
     "id": "smart-streetlight-ptz-surveillance-node",

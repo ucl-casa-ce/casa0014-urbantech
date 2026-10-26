@@ -4,22 +4,20 @@
     "title": "Dynamic Ambient Noise Sensor",
     "category": "Air Quality",
     "categorySlug": "air-quality",
-    "description": "-  The level of the background noise in the environment \n- Seems to be adjusting the speaker volume in the station to filter out the noise from the surroundings (I.e traffic noise, people noise etc)\n- It has to function periodically in certain interval’s",
-    "parameters": [
-      "Decibels (dB)"
-    ],
+    "description": "Noise level, to adjust microphone level",
+    "parameters": [],
     "questions": [
-      "I only notice one sensor, is that enough",
-      "How does it determine if a certain sound is classified as a noise?",
-      "How old is this technology?"
+      "How many of these exists around London",
+      "Do all DLR’s have this",
+      "How frequently is it used?"
     ],
     "location": {
-      "address": "DLR, Smythe Street, Saint Matthias Estate, Poplar, London Borough of Tower Hamlets, Greater London, England, E14 0HF, United Kingdom",
-      "lat": 51.510252,
-      "lng": -0.013116,
-      "googleMapsUrl": "https://maps.google.com/?q=51.510252,-0.013116",
+      "address": "DLR Rotunda, Leamouth Lifting Footbridge, London City Island, Blackwall, London Borough of Newham, Greater London, England, E14 0TJ, United Kingdom",
+      "lat": 51.514504,
+      "lng": 0.007346,
+      "googleMapsUrl": "https://maps.google.com/?q=51.514504,0.007346",
       "what3words": "",
-      "area": "DLR"
+      "area": "DLR Rotunda"
     },
     "contributor": {
       "name": "RABEE ALI",
